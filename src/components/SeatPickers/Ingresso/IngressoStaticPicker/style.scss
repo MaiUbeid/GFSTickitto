@@ -1,0 +1,75 @@
+@import '../../../../styles/partials/all';
+
+.ingresso-static-picker{
+  background-color: var(--body-background-secondary);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: calculateRem(50px) calculateRem(94px) 0 calculateRem(94px);
+  align-items: center;
+
+  &--isTablet{
+    padding: 10px 20px 0 20px;
+    .ingresso-static-picker{
+      &__seating-image{
+          width: 100%;
+          margin: 0;
+          padding-bottom: 0px;
+      }
+      &__panel{
+        &__tickets{
+            padding-top: calculateRem(30px);
+        }
+      }
+    }
+  }
+
+  &__seating-image{
+    width: 50%;
+    display: block;
+    max-width: 600px;
+    max-height: 600px;
+    margin-right:calculateRem(117px) ;
+    border-radius: 2px;
+    padding-bottom: 10px;
+
+    @include isTablet(){
+      width: 100%;
+      margin: 0;
+      padding-bottom: 0px;
+    }
+  }
+  &__panel{
+    flex: 1;
+    &__tickets{
+      @include isTablet(){
+        padding-top: calculateRem(30px);
+      }
+    }
+    
+    //overrides for quantity select row
+    .quantity-select-row{
+      flex-direction: column;
+      align-items: baseline;
+      padding: 0;
+      .text-with-subtext__main{
+        @include fontSize(32px);
+        font-weight: 500;
+      }
+
+      .radio-dropdown-options{
+        padding-top: 0;
+      }
+
+      &__selector{
+        padding: calculateRem(30px) 0 ;
+      }
+    }
+
+    button{
+      @include widgetButton();
+    }
+  }
+}

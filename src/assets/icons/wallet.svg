@@ -1,0 +1,8 @@
+<svg id="Icon_-_Wallet" data-name="Icon - Wallet" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 35 31">
+	<rect id="Rectangle_2037" data-name="Rectangle 2037" width="35" height="31" transform="translate(0 0)" fill="#7a49a0" opacity="0" />
+	<g id="wallet" transform="translate(0.306)">
+		<path id="Path_8677" data-name="Path 8677" d="M48.519,52.3H72.986a6.708,6.708,0,0,1,.855.054A5.046,5.046,0,0,0,67.915,48.1L47.793,51.54H47.77a5.046,5.046,0,0,0-3.14,2A6.7,6.7,0,0,1,48.519,52.3Z" transform="translate(-43.626 -48.018)" fill="#7a49a0" />
+		<path id="Path_8678" data-name="Path 8678" d="M60.86,128H36.393a4.9,4.9,0,0,0-4.893,4.893v14.68a4.9,4.9,0,0,0,4.893,4.893H60.86a4.9,4.9,0,0,0,4.893-4.893v-14.68A4.9,4.9,0,0,0,60.86,128Zm-3.632,14.68a2.447,2.447,0,1,1,2.447-2.447A2.447,2.447,0,0,1,57.228,142.68Z" transform="translate(-31.5 -121.885)" fill="#7a49a0" />
+		<path id="Path_8679" data-name="Path 8679" d="M32,100.651V93.043a5.008,5.008,0,0,1,4.1-5.036,33.213,33.213,0,0,1,5.379-.507s1.759,1.223.306,1.223a.946.946,0,1,0,0,1.873c1.414,0,0,1.8,0,1.8l-5.7,6.461Z" transform="translate(-31.962 -84.481)" fill="#7a49a0" />
+	</g>
+</svg>

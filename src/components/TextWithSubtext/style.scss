@@ -1,0 +1,25 @@
+@import '../../styles/partials/all';
+
+.text-with-subtext{
+  height: 100%;
+  &__main{
+    font-weight: bold;
+    @include fontSize(26px);
+    white-space: normal;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+
+  }
+  
+  &__sub{
+    color: rgb(124,124,124);
+    @include fontSize(20px);
+  }
+
+  &--disabled{
+    .text-with-subtext__main{
+      color: var(--inactive-color)
+    }
+  }
+}

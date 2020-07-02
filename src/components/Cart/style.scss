@@ -1,0 +1,228 @@
+@import '../../styles/partials/all';
+
+.popup-close {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 200vh;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.popup {
+  &-cart {
+    border: 1px solid var(--input-border-color);
+    box-shadow: 0px 12px 24px #0000001f;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 16.7rem;
+    border-radius: calculateRem(18px);
+
+    @include pointyTriangleOnDiv();
+    @include isTablet() {
+      right: 7rem;
+    }
+    @include isMobile() {
+      position: relative;
+      right: 0;
+      top: 0;
+      &:before {
+        display: none;
+      }
+    }
+
+    &--hide {
+      display: none;
+    }
+    &__crossbtn {
+      all: unset;
+      position: absolute;
+      top: calculateRem(19.2px);
+      padding-bottom: 1rem;
+      right: calculateRem(17.8px);
+
+      .cross-icon {
+        width: calculateRem(19px);
+      }
+    }
+
+    .ant-card {
+      border-radius: none;
+
+      &-head {
+        border-bottom: none;
+        height: 2rem;
+        min-height: 0;
+        padding-top: calculateRem(23px);
+        padding-bottom: calculateRem(15px);
+        padding-left: calculateRem(24px);
+
+        &-title {
+          padding: 0;
+        }
+      }
+      &-body {
+        padding: 1.4rem;
+        padding-top: 3rem;
+      }
+      &-actions {
+        height: calculateRem(80px);
+        border-top: none;
+        border-radius: 0 0 1rem 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        @include isMobile() {
+          border-radius: 0;
+        }
+      }
+    }
+    .ant-card-head-title {
+      .ant-typography {
+        color: var(--label-color);
+        margin: 0;
+        padding-top: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.47px;
+        width: 30%;
+        @include fontSize(26px);
+        &:hover {
+          color: #916aad;
+          background-color: #fff;
+          border-color: #916aad;
+        }
+      }
+    }
+    .ant-card-meta-description {
+      .ant-typography {
+        font-weight: 500;
+        letter-spacing: 0.26px;
+        @include fontSize(22px);
+        @include isMobile() {
+          @include fontSize(18px);
+        }
+      }
+    }
+
+    .popup-cart__ticket-name {
+      color: var(--label-color);
+      margin-bottom: 0;
+    }
+
+    &__ticket {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+
+      * {
+        padding-top: 1px;
+      }
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &-button {
+        all: unset;
+        svg {
+          width: calculateRem(27px);
+          height: calculateRem(27px);
+          @include isMobile() {
+            width: calculateRem(20px);
+            height: calculateRem(20px);
+          }
+        }
+
+        @include isMobile() {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &-icons {
+        margin-left: 5rem;
+        .ant-btn-primary:hover,
+        .ant-btn-primary:focus {
+          all: unset;
+        }
+
+        @include isMobile() {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &-line {
+        border: none;
+        height: 1px;
+        margin-bottom: calculateRem(23px);
+        background-color: var(--input-border-color);
+      }
+
+      &-date {
+        display: flex;
+        color: var(--card-title-text-color);
+        @include fontSize(18px);
+        @include isMobile() {
+          @include fontSize(14px);
+        }
+      }
+
+      &-icon {
+        width: calculateRem(22px);
+        margin-right: 0.7rem;
+        @include isMobile() {
+          width: calculateRem(18px);
+        }
+      }
+
+      &-img {
+        width: calculateRem(95px);
+        height: calculateRem(95px);
+        border-radius: calculateRem(10px);
+      }
+
+      &-details {
+        color: var(--card-title-text-color);
+        @include fontSize(18px);
+        @include isMobile() {
+          @include fontSize(14px);
+        }
+      }
+
+      &-total {
+        font-weight: 600;
+        font-family: var(--secondary-font-family);
+        letter-spacing: -0.13px;
+        color: var(--label-color);
+        margin-left: 6rem;
+        @include fontSize(18px);
+        @include isMobile() {
+          display: block;
+          margin-left: 0;
+          @include fontSize(14px);
+        }
+      }
+    }
+  }
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2.8rem;
+  padding: 0 1rem;
+
+  &__text {
+    @include textOfCartActions();
+    @include fontSize(20px);
+  }
+
+  &__price {
+    @include priceOfCartActions();
+    @include fontSize(20px);
+  }
+}

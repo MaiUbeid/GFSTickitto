@@ -1,0 +1,442 @@
+@import '../../styles/partials/all';
+
+$prefixIconSize: 25px;
+
+.ant-picker {
+  &-range {
+    border: calculateRem(2px) solid var(--input-border-color);
+    background-color: var(--picker-bg-color);
+    color: var(--picker-text-color);
+    height: 100%;
+    width: 100%;
+    padding: calculateRem(4px) calculateRem(35px);
+
+    &:hover {
+      border: calculateRem(2px) solid var(--input-border-color);
+    }
+
+    &-separator {
+      color: transparent;
+      border-left: calculateRem(1px) solid var(--input-border-color);
+      height: 64%;
+      width: 0;
+    }
+
+    .ant-picker-active-bar {
+      background: transparent;
+    }
+  }
+
+  &:hover {
+    border-left-color: var(--input-border-color);
+    box-shadow: none;
+  }
+
+  &-focused {
+    box-shadow: none;
+  }
+
+  &-input {
+    > input {
+      font-family: var(--primary-font-family);
+      font-weight: 400;
+      color: var(--picker-text-color);
+      padding-left: calculateRem($prefixIconSize + 10px);
+      width: calculateRem(112px);
+      letter-spacing: -0.02rem;
+      @include fontSize(22px);
+    }
+
+    > input::placeholder {
+      font-family: var(--primary-font-family);
+      font-weight: 400;
+      color: var(--picker-text-color);
+      letter-spacing: 0.26px;
+      @include fontSize(22px);
+    }
+
+    &:first-child {
+      > input {
+        width: calculateRem(100px + $prefixIconSize);
+      }
+    }
+  }
+
+  &-suffix {
+    margin: 0;
+    position: absolute;
+
+    width: calculateRem($prefixIconSize);
+    height: calculateRem($prefixIconSize);
+    > svg {
+      display: block;
+    }
+  }
+
+  &-header {
+    border-bottom: none;
+
+    > button:hover {
+      color: var(--picker-primary-color);
+    }
+
+    > .ant-picker {
+      &-header-prev-btn,
+      &-header-next-btn {
+        color: var(--picker-primary-color);
+        background-color: var(--picker-bg-color);
+        border-radius: calculateRem(8px);
+        width: calculateRem(44px);
+        height: calculateRem(44px);
+        @include flexCenter();
+      }
+
+      button {
+        line-height: 1rem;
+      }
+    }
+
+    &-view {
+      margin-top: calculateRem(10px);
+      .ant-picker {
+        &-month {
+          &-btn {
+            font-family: var(--primary-font-family);
+            @include fontSize(22px);
+            letter-spacing: 0.26px;
+            font-weight: 500;
+          }
+        }
+
+        &year {
+          &-btn {
+            font-family: var(--primary-font-family);
+            @include fontSize(22px);
+            letter-spacing: 0.26px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    &-super-prev-btn,
+    &-super-next-btn {
+      display: none;
+    }
+
+    &-next-btn,
+    &-prev-btn {
+      visibility: visible !important;
+    }
+  }
+
+  &-clear {
+    background-color: var(--picker-transparent-bg-color);
+  }
+
+  &-panel {
+    &-container {
+      border: calculateRem(2px) solid var(--input-border-color);
+      box-shadow: 0 12px 24px var(--shadow-color);
+      border-radius: calculateRem(18px);
+
+      .ant-picker {
+        &-panel {
+          padding: calculateRem(26px) calculateRem(23px);
+        }
+      }
+    }
+  }
+
+  &-content th {
+    font-weight: 450;
+    opacity: 0.8;
+    letter-spacing: -0.05rem;
+    @include fontSize(14px);
+  }
+
+  &-cell {
+    padding: 0.3rem;
+
+    &-disabled {
+      background-color: var(--picker-transparent-bg-color);
+      opacity: 0.8;
+
+      &::before {
+        background-color: var(--picker-transparent-bg-color);
+      }
+
+      .ant-picker {
+        &-cell {
+          &-inner {
+            background-color: var(--picker-bg-color);
+            border: calculateRem(2px) solid var(--input-border-color);
+          }
+        }
+      }
+    }
+
+    .ant-picker {
+      &-cell {
+        &-inner {
+          border: calculateRem(2px) solid var(--input-border-color);
+          background-color: var(--input-bg);
+          border-radius: calculateRem(4px);
+          height: calculateRem(36px);
+          line-height: calculateRem(36px);
+          @include fontSize(18px);
+        }
+      }
+    }
+
+    &-in {
+      &-view {
+        .ant-picker-cell:not(.ant-picker-cell-disabled) {
+          .ant-picker-cell-inner {
+            font-family: var(--primary-font-family);
+            background-color: var(--picker-bg-color);
+            border: calculateRem(2px) solid var(--input-border-color);
+            color: var(--picker-text-color);
+            border-radius: calculateRem(4px);
+            font-weight: 500;
+          }
+        }
+      }
+
+      &-range {
+        > .ant-picker {
+          &-cell {
+            &-inner {
+              background-color: var(--picker-primary-color);
+              border-color: var(--picker-border-color);
+              color: var(--picker-secondary-text-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-content {
+    th,
+    td {
+      min-width: 3rem;
+    }
+  }
+}
+
+.result__calendar {
+  display: none;
+
+  &-button {
+    font-family: var(--primary-font-family);
+    height: calculateRem(50px);
+    font-weight: 500;
+    width: 90%;
+    margin: calculateRem(30px) auto auto;
+  }
+
+  @include isTablet() {
+    display: block;
+  }
+}
+
+@include isTablet {
+  .input__container {	
+    width: 100%;	
+  }
+}
+
+.calendar__background {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main__calendar {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 20px);
+  left: -45px;
+
+  .ant-picker-calendar {
+    box-shadow: 0px 12px 24px #0000001f;
+    border-radius: calculateRem(18px);
+    border: calculateRem(2px) solid var(--card-border-color);
+    @include pointyTriangleOnDiv() {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+.secondary__picker {
+  width: calculateRem(380px);
+  height: calculateRem(88px);
+  border-radius: calculateRem(12px);
+  box-shadow: 0 0.05rem 0.01rem var(--shadow-color);
+  background-color: var(--picker-bg-color);
+  top: calculateRem(110px);
+  left: calculateRem(132px);
+
+  @include isTablet() {
+    width: 70%;
+    height: calculateRem(64px);
+    left: 15%;
+  }
+
+  &:hover {
+    border-color: var(--input-border-color);
+  }
+
+  .ant-picker {
+    &-range {
+      &-separator {
+        border-bottom: calculateRem(2px) solid var(--picker-separator-color);
+        border-left: none;
+        height: 2%;
+        width: calculateRem(120px);
+        position: relative;
+      }
+    }
+  }
+
+  .ant-picker {
+    &-suffix {
+      width: calculateRem(24px);
+      height: calculateRem(24px);
+      margin-top: -1px;
+    }
+  }
+
+  .calendar__background {
+    background-color: transparent;
+    position: absolute;
+    width: 99vw;
+    height: 200vh;
+    left: -20rem;
+    top: -14rem;
+    z-index: 1;
+  }
+
+  .main__calendar {
+    top: calc(100% + 50px);
+    left: calculateRem(-176px);
+    z-index: 11;
+
+    .ant-picker-calendar {
+      @include pointyTriangleOnDiv() {
+        height: 24px;
+        width: 24px;
+        left: 14%;
+      }
+    }
+  }
+}
+
+.ant-picker-dropdown-range {
+  padding: 0;
+  display: none;
+
+  @include isTablet() {
+    display: none;
+  }
+}
+
+.ant-picker-cell .ant-picker-cell-in-view:hover {
+  border: none;
+  outline: none;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border: none;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):not(.ant-picker-cell-range-end)
+  .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start)
+  .ant-picker-cell-inner {
+  border: calculateRem(2px) solid var(--picker-border-color);
+  border-radius: calculateRem(4px);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner,
+.ant-picker-cell:hover:not(.ant-picker-cell-in-view) .ant-picker-cell-inner,
+.ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end)
+  .ant-picker-cell-inner {
+  border: calculateRem(2px) solid var(--picker-border-color);
+  background-color: var(--picker-primary-color);
+  color: var(--picker-secondary-text-color);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-in-range::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before,
+.ant-picker-cell-in-view.ant-picker-cell-in-range-hover,
+.ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start.ant-picker-cell-range-hover::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end.ant-picker-cell-range-hover::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single).ant-picker-cell-range-hover-start::before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single).ant-picker-cell-range-hover-end::before,
+.ant-picker-panel
+  > :not(.ant-picker-date-panel)
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start::before,
+.ant-picker-panel
+  > :not(.ant-picker-date-panel)
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end::before,
+.ant-picker-date-panel
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start
+  .ant-picker-cell-inner::after,
+.ant-picker-date-panel
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end
+  .ant-picker-cell-inner::after {
+  background-color: var(--picker-transparent-bg-color);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single::after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-end-single::after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range)::after {
+  border: none;
+}
+
+.ant-picker-prev-icon,
+.ant-picker-next-icon {
+  width: calculateRem(15px);
+  height: calculateRem(15px);
+  margin-bottom: 0;
+
+  &::before {
+    width: calculateRem(12px);
+    height: calculateRem(12px);
+  }
+}
+
+.ant-picker-prev-icon {
+  margin-left: 20%;
+}
+
+.ant-picker-next-icon {
+  margin-left: -20%;
+}
+
+@include isTablet() {
+  .ant-picker {
+    &-panel-container {
+      .ant-picker-panels {
+        display: grid;
+      }
+    }
+
+    &-suffix {
+      width: calculateRem($prefixIconSize - 6px);
+      height: calculateRem($prefixIconSize - 6px);
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import '../../styles/partials/all';
+
+.menu {
+  height: calculateRem(118px);
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-color: var(--menu-bg-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  @include isMobile() {
+    height: calculateRem(62px);
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    margin-right: calculateRem(132px);
+    @include isTablet() {
+      margin-right: calculateRem(30px);
+    }
+
+    @include isMobile() {
+      margin-right: calculateRem(14px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    letter-spacing: 0.24px;
+    font-weight: 500;
+    opacity: 1;
+    padding-left: calculateRem(90px);
+    padding-right: 0;
+    @include fontSize(20px);
+    &:focus {
+      outline: none;
+    }
+    @include isTablet() {
+      padding-left: calculateRem(60px);
+    }
+    @include isMobile() {
+      padding-left: calculateRem(7px);
+      font-size: 0;
+    }
+  }
+
+  &__last-item {
+    padding-left: calculateRem(90px);
+    @include isTablet() {
+      padding-left: calculateRem(60px);
+    }
+    @include isMobile() {
+      padding-left: calculateRem(7px);
+      @include fontSize(10px);
+    }
+  }
+
+  &__icon {
+    margin-right: calculateRem(14px);
+    width: calculateRem(31px);
+    @include isMobile() {
+      width: calculateRem(15px);
+    }
+  }
+
+  &__help {
+    &--icon {
+      margin-right: calculateRem(14px);
+      width: calculateRem(27px);
+      @include isMobile() {
+        width: calculateRem(13px);
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-grow: 2;
+    padding-left: calculateRem(132px);
+    &:focus {
+      outline: none;
+    }
+    @include isTablet() {
+      padding-left: calculateRem(30px);
+    }
+    @include isMobile() {
+      padding-left: calculateRem(14px);
+    }
+
+    &--icon {
+      width: calculateRem(180px);
+      @include isMobile() {
+        width: calculateRem(97px);
+      }
+    }
+  }
+}
+
+li {
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

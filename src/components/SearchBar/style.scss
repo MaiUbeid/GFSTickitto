@@ -1,0 +1,154 @@
+@import '../../styles/partials/all';
+
+$fontSize: 22px; //this is the font in the designs
+
+.search-bar {
+  position: relative;
+  width: 70vw;
+  height: calculateRem(180px);
+  margin: auto;
+  background-color: var(--card-secondary-bg-color);
+  box-shadow: 0 1rem 2rem var(--bar-shadow-color);
+  border: calculateRem(2px) solid var(--input-border-color);
+  border-radius: calculateRem(18px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__sub-container.ant-input-group.ant-input-group-compact {
+    //necessary for higher specicifity
+    display: inline-flex;
+    $leftRightPadding: calculateRem(46px);
+    height: calculateRem(88px);
+    width: calc(100% - calc(#{$leftRightPadding} * 2));
+
+    &::before {
+      display: block;
+    }
+
+    @include inputWrapperStyle();
+
+    .ant-input-prefix {
+      display: flex;
+    }
+
+    //search text input
+    .search-bar__sub-container__input {
+      padding-left: calculateRem(25px);
+      @include inputStyle();
+      height: calculateRem(88px);
+      border-top-left-radius: calculateRem(12px);
+      border-bottom-left-radius: calculateRem(12px);
+      border-width: calculateRem(2px);
+
+      .ant-input,
+      &::placeholder {
+        margin-left: calculateRem(20px);
+      }
+
+      &__icon {
+        width: calculateRem(33px);
+      }
+    }
+
+    //date picker
+    > .ant-picker {
+      height: calculateRem(88px);
+      border-color: var(--input-border-color);
+    }
+    //button
+    > .button-primary {
+      font-weight: 400;
+      height: calculateRem(88px);
+      padding: 0 4%;
+      border-top-right-radius: calculateRem(12px);
+      border-bottom-right-radius: calculateRem(12px);
+      @include fontSize($fontSize);
+    }
+
+    //TODO this css should be moved into the button component
+    .search-bar__sub-container__button-icon {
+      width: calculateRem(10px);
+      height: calculateRem(10px);
+      margin-left: calculateRem(13px);
+    }
+  }
+}
+
+@include isTablet() {
+  $fontShrink: 4px;
+  .search-bar {
+    height: calculateRem(224px);
+    width: 90vw;
+
+    &__sub-container.ant-input-group.ant-input-group-compact {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      padding: calculateRem(20px);
+
+      //the search textbox
+      .search-bar__sub-container__input {
+        height: calculateRem(50px);
+        width: 100%;
+        margin-bottom: calculateRem(16px);
+        padding: 0 calculateRem(20px);
+        border-radius: calculateRem(10px);
+        .ant-input {
+          @include fontSize($fontSize - $fontShrink);
+          &::placeholder {
+            @include fontSize($fontSize - $fontShrink);
+          }
+        }
+
+        &__icon {
+          width: calculateRem(19px);
+        }
+      }
+
+      // the date picker
+      .input__container > .ant-picker {
+        margin-bottom: calculateRem(16px);
+        padding: 0 calculateRem(20px);
+        width: 100%;
+        height: calculateRem(50px);
+        border-radius: calculateRem(10px);
+      }
+
+      //the button
+      > .button-primary {
+        border-radius: calculateRem(10px);
+        width: 100%;
+        height: calculateRem(50px);
+        @include fontSize($fontSize - $fontShrink);
+      }
+    }
+  }
+}
+
+//change font sizes
+@include isMobile() {
+  $fontShrink: 8px;
+
+  .search-bar {
+    &__sub-container {
+      &__input {
+        .ant-input {
+          @include fontSize($fontSize - $fontShrink);
+          &::placeholder {
+            @include fontSize($fontSize - $fontShrink);
+          }
+        }
+      }
+
+      &.ant-input-group.ant-input-group-compact {
+        > .button-primary {
+          @include fontSize(16px);
+          letter-spacing: 0.19px;
+        }
+      }
+    }
+  }
+}

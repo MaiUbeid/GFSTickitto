@@ -1,0 +1,262 @@
+@import '../../styles/partials/all';
+
+.calendar {
+  width: 100%;
+  &__header {
+    width: 100%;
+    justify-content: space-between;
+    padding: calculateRem(25px) calculateRem(45px);
+
+    @include isTablet() {
+      padding: calculateRem(25px) calculateRem(15px);
+    }
+
+    // .ant-picker-header-next-btn
+    button.calendar__header__prev-btn,
+    button.calendar__header__next-btn {
+      color: var(--picker-primary-color);
+      background-color: var(--picker-bg-color);
+      border-radius: calculateRem(8px);
+      width: calculateRem(44px);
+      height: calculateRem(44px);
+      @include flexCenter();
+      margin: 0;
+      svg {
+        width: calculateRem(21px);
+        height: calculateRem(21px);
+      }
+      transition: 0.2s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .ant-picker-calendar-header .ant-picker-calendar-mode-switch {
+      display: none;
+    }
+
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      border: none;
+    }
+
+    .ant-select-arrow {
+      display: none;
+    }
+
+    .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+      padding: 0 calculateRem(10px);
+    }
+
+    .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+    .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+      color: var(--dropdown-text-color);
+      font-family: var(--primary-font-family);
+      letter-spacing: 0.26px;
+      opacity: 1;
+      @include fontSize(22px);
+    }
+
+    .ant-picker-panel {
+      border: none;
+      padding-top: 1rem;
+    }
+
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      padding: 0;
+      border-color: transparent;
+
+      &:hover, &:focus {
+        outline: none;
+        border: none
+      }
+    }
+
+    &__month {
+      font-weight: 500;
+      padding-right: 2px;
+    }
+
+    &__year {
+      font-weight: 400;
+      @include flexCenter();
+    }
+
+    &-slot {
+      padding: 2rem 3rem;
+      background-color: var(--input-bg);
+      border-radius: 1.1rem;
+
+      &__text {
+        font-family: var(--primary-font-family);
+        font-weight: 500;
+        color: var(--card-paragraph-color);
+        margin-bottom: 0;
+        @include fontSize(18px);
+      }
+
+      &__icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0 0.6rem 0 0;
+      }
+
+      &__dropdown {
+        .ant-select-single:not(.ant-select-customize-input)
+          .ant-select-selector {
+          height: 3.7rem;
+          border-radius: 0.5rem;
+          border: calculateRem(2px) solid var(--input-border-color);
+          background-color: var(--dropdown-secondary-color);
+
+          .ant-select-selection-search-input {
+            height: 3.7rem;
+          }
+        }
+
+        .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+        .ant-select-single.ant-select-show-arrow
+          .ant-select-selection-placeholder {
+          color: var(--dropdown-text-color);
+          font-family: var(--primary-font-family);
+          font-weight: 500;
+          letter-spacing: 0.26px;
+          opacity: 1;
+          margin: auto 1rem;
+          @include fontSize(22px);
+        }
+
+        .ant-select-arrow {
+          color: var(--dropdown-arrow-dark-color);
+          width: 1rem;
+          height: 1rem;
+          right: 1rem;
+          @include fontSize(16px);
+        }
+      }
+
+      &__select {
+        width: 100%;
+        margin: 1rem auto;
+      }
+
+      &__option {
+        width: 100%;
+        height: 3.7rem;
+        padding-top: 1rem;
+        color: var(--dropdown-text-color);
+        font-weight: 500;
+        letter-spacing: 0.26px;
+        @include fontSize(18px);
+      }
+
+      &__button {
+        height: calculateRem(64px);
+        width: 100%;
+        margin: 1.5rem 0 1rem;
+      }
+    }
+  }
+
+  &__body {
+    .ant-picker-cell-disabled,
+    .ant-picker-cell {
+      opacity: 1;
+    }
+
+    .ant-picker-cell-disabled {
+      .ant-picker-cell-inner {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .ant-picker-cell-inner {
+      background-color: var(--picker-bg-color);
+
+      &:focus {
+        border-color: var(--picker-border-color) !important;
+        outline: none;
+        border-radius: calculateRem(4px);
+      }
+    }
+
+    .calendar-cell__from-date {
+      .ant-picker-calendar-date-value {
+        background-color: var(--picker-primary-color);
+        border-color: var(--picker-border-color);
+        height: 100%;
+      }
+    }
+
+    .calendar-cell__to-date {
+      .ant-picker-calendar-date-value {
+        background-color: var(--picker-primary-color);
+        border-color: var(--picker-border-color);
+        height: 100%;
+      }
+    }
+
+    .calendar-cell__range-part {
+      .ant-picker-calendar-date-value {
+        background-color: #F8F5FA;
+        border-color: #F8F5FA;
+        color: #000000;
+        height: 100%;
+      }
+    }
+
+    .ant-picker-cell-in-view:not(.ant-picker-cell-disabled) {
+      opacity: 1;
+    }
+
+    .ant-picker-panel {
+      border: 0;
+      width: 100%;
+    }
+  }
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+    cursor: text;
+  }
+}
+
+.ant-picker-calendar {
+  padding: 0;
+  padding-bottom: calculateRem(30px);
+
+  @include isTablet() {
+    padding-bottom: calculateRem(15px);
+  }
+}
+
+.ant-picker-calendar .ant-picker-panel .ant-picker-month-panel,
+.ant-picker-calendar .ant-picker-panel .ant-picker-date-panel {
+  padding: 0 calculateRem(40px);
+
+  @include isTablet() {
+    padding: 0 calculateRem(30px);
+  }
+}
+
+@include isTablet() {
+  .ant-picker-calendar .ant-picker-panel .ant-picker-body {
+    padding: 0 calculateRem(15px);
+  }
+
+  .ant-picker-calendar .ant-picker-panel .ant-picker-content {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+.ant-picker-cell-inner.calendar-cell__from-date, 
+.ant-picker-cell-inner.calendar-cell__range-part,
+.ant-picker-cell-inner.calendar-cell__to-date {
+  background-color: var(--picker-primary-color) !important;
+  border-color: var(--picker-border-color) !important;
+  color: var(--picker-secondary-text-color);
+}
+
+.ant-select-focused.ant-select-single.ant-select-single.ant-select-show-arrow.ant-select-open > .ant-select-selector {
+  border: none;
+}

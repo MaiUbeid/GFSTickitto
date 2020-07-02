@@ -1,0 +1,143 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.faq-page {
+  &__header {
+    height: calculateRem(238px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(140 + $mobile-menu-height);
+    }
+
+    .ant-typography {
+      font-family: var(--secondary-font-family);
+      color: var(--layout-header-color);
+      position: absolute;
+      font-weight: 500;
+      letter-spacing: -0.68px;
+      vertical-align: middle;
+    }
+  }
+
+  &__breadcrumb {
+    position: absolute;
+    top: 22%;
+    font-weight: 550;
+    left: 6.3rem;
+    font-family: var(--secondary-font-family);
+
+    &__separator-icon {
+      width: 0.5rem;
+      color: var(--breadcrumb-separator-color);
+    }
+
+    &-icon {
+      padding-right: 0.5rem;
+      width: 1.6rem;
+    }
+  }
+
+  &__items {
+    padding: calculateRem(90px) calculateRem(132px) 0 calculateRem(132px);
+
+    @include isTablet() {
+      padding: calculateRem(30px);
+    }
+
+    .ant-collapse {
+      border: none;
+      background: none;
+    }
+
+    &-item {
+      padding: calculateRem(30px) calculateRem(46px) calculateRem(30px)
+        calculateRem(46px);
+      margin: calculateRem(46px) auto;
+      background-color: var(--collapse-bg-color);
+      border-radius: calculateRem(18px);
+      box-shadow: 0 8px 16px var(--card-shadow-color);
+
+      @include isTablet() {
+        padding: calculateRem(30px) calculateRem(15px) calculateRem(30px)
+        calculateRem(15px);
+      }
+
+      .ant-collapse-content {
+        border-bottom-left-radius: calculateRem(18px);
+        border-bottom-right-radius: calculateRem(18px);
+        border-top: none;
+
+        > .ant-collapse-content-box {
+          font-family: var(--primary-font-family);
+          @include fontSize(20px);
+          font-weight: 400;
+          letter-spacing: 0.26px;
+          padding: calculateRem(20px) calculateRem(100px) 0 calculateRem(80px);
+
+          @include isTablet() {
+            @include fontSize(13px);
+            padding: calculateRem(20px);
+          }
+        }
+      }
+    }
+
+    &-icon {
+      width: calculateRem(39px);
+      margin-top: calculateRem(-5px);
+      margin-right: calculateRem(27px);
+
+      &__arrow {
+        width: calculateRem(25px);
+        float: right;
+      }
+    }
+  }
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-extra {
+  float: left;
+
+  @include isLandscapetablet() {
+    display: none;
+  }
+}
+
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  letter-spacing: 0.32px;
+  @include fontSize(32px);
+
+  @include isTablet() {
+    @include fontSize(24px);
+    padding-right: calculateRem(10px);
+  }
+
+  .ant-collapse-arrow {
+    color: var(--collapse-arrow-color);
+    top: 25%;
+
+    & svg {
+      width: calculateRem(32px);
+      height: calculateRem(32px);
+      transform: rotate(-90deg);
+      transition: transform 0.24s;
+
+      @include isTablet() {
+        width: calculateRem(15px);
+        height: calculateRem(20px);
+      }
+    }
+  }
+}
+
+.ant-collapse > .ant-collapse-item {
+  border: calculateRem(2px) solid var(--card-border-color);
+}
+
+.ant-collapse > .ant-collapse-item:last-child,
+.ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header {
+  border-radius: calculateRem(18px);
+}

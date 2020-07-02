@@ -1,0 +1,289 @@
+@import '../../../styles/partials/all';
+
+.confirmation-step {
+  background-color: var(--layout-body-background);
+  padding: calculateRem(80px) calculateRem(132px);
+
+  @include isLandscapetablet() {
+    padding: 3rem;
+  }
+
+  @include isMobile() {
+    padding: calculateRem(20px) calculateRem(15px);
+  }
+
+  &__title {
+    > .ant-typography {
+      font-weight: 500;
+      padding-bottom: calculateRem(39px);
+      margin-bottom: 0;
+      color: var(--label-color);
+      letter-spacing: 0.79px;
+      @include fontSize(44px);
+
+      @include isTablet() {
+        @include fontSize(28px);
+        letter-spacing: 0.5px;
+        padding-bottom: calculateRem(22px);
+      }
+    }
+  }
+
+  &__success {
+    &-card {
+      width: 100%;
+      font-family: var(--primary-font-family);
+      background-color: var(--card-secondary-bg-color);
+      border: calculateRem(2px) solid var(--card-border-color);
+      border-radius: calculateRem(18px);
+      padding: calculateRem(46px);
+      box-shadow: 0px 8px 16px var(--card-shadow-color);
+
+      @include isLandscapetablet() {
+        padding: calculateRem(32px);
+      }
+
+      @include isMobile() {
+        border-radius: calculateRem(10px);
+        padding: calculateRem(25px) calculateRem(20px);
+      }
+    }
+  }
+
+  &__fail {
+    &-card {
+      font-family: var(--primary-font-family);
+      background-color: var(--card-secondary-bg-color);
+      border: calculateRem(2px) solid var(--card-border-color);
+      border-radius: calculateRem(18px);
+      padding: 3rem 2rem 1.5rem 2.5rem;
+      box-shadow: 0px 8px 16px var(--card-shadow-color);
+    }
+
+    &-text {
+      font-weight: 400;
+      letter-spacing: 0.26px;
+      @include fontSize(22px);
+
+      @include isTablet() {
+        letter-spacing: 0.19px;
+      @include fontSize(18px);
+      }
+    }
+
+    &-button {
+      width: calculateRem(280px);
+      height: calculateRem(64px);
+      margin-bottom: 2rem;
+      @include fontSize(22px);
+      letter-spacing: 0.26px;
+
+      @include isTablet() {
+        width: 100%;
+        height: calculateRem(50px);
+        @include fontSize(18px);
+        letter-spacing: 0.19px;
+      }
+    }
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      border-radius: calculateRem(8px);
+      height: 50%;
+
+      @include isLandscapetablet() {
+        height: 90%;
+      }
+    }
+  }
+
+  &__reference {
+    border-bottom: calculateRem(2px) solid var(--card-border-color);
+    color: var(--label-color);
+    @include fontSize(22px);
+    letter-spacing: 0.26px;
+    font-weight: 500;
+    margin: auto;
+  }
+
+  &__content {
+    padding: calculateRem(30px) 0;
+
+    @include isTablet() {
+      padding: 0;
+    }
+  }
+
+  &__sub-title {
+    @include fontSize(26px);
+    letter-spacing: 0.47px;
+
+    @include isTablet() {
+      @include fontSize(20px);
+      letter-spacing: 0.24px;
+    }
+  }
+
+  &__description {
+    padding-left: calculateRem(35px);
+
+    @include isLandscapetablet() {
+      padding-left: 0;
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    &-item {
+      color: var(--form-text-secondary-color);
+      @include fontSize(18px);
+
+      @include isTablet() {
+        @include fontSize(13px);
+      }
+    }
+  }
+
+  &__attraction-details,
+  &__tickets {
+    border-bottom: 2px solid var(--card-border-color);
+  }
+
+  &__tickets {
+    padding: calculateRem(32px) 0;
+
+    @include isTablet() {
+      padding: calculateRem(21px) 0;
+    }
+
+    &-total {
+      padding: calculateRem(26px) 0 0;
+
+      @include isTablet() {
+        padding: calculateRem(16px) 0 0;
+      }
+
+      &__text {
+        @include fontSize(26px);
+        letter-spacing: 0.47px;
+        font-weight: 500;
+
+        @include isTablet() {
+          @include fontSize(20px);
+          letter-spacing: 0.36px;
+        }
+      }
+
+      &__value {
+        font-family: var(--secondary-font-family);
+        color: var(--price-text-color);
+        @include fontSize(26px);
+        letter-spacing: -0.31px;
+        font-weight: 600;
+
+        @include isTablet() {
+          @include fontSize(20px);
+          letter-spacing: -0.24px;
+        }
+      }
+    }
+
+    &__text,
+    &__value {
+      @include fontSize(22px);
+      letter-spacing: 0.26px;
+      font-weight: 400;
+
+      @include isTablet() {
+        @include fontSize(15px);
+        letter-spacing: 0.18px;
+      }
+    }
+
+    &__value {
+      font-weight: 500;
+    }
+
+    &__data {
+      padding-bottom: 1rem;
+
+      @include isTablet() {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.ticket {
+  &__location-icon {
+    width: calculateRem(18px);
+    height: calculateRem(25px);
+    margin-right: calculateRem(15px);
+
+    @include isTablet() {
+      width: calculateRem(13px);
+      height: calculateRem(18px);
+    }
+  }
+
+  &__icon {
+    width: calculateRem(21px);
+    height: calculateRem(21px);
+    margin-right: calculateRem(10px);
+
+    @include isTablet() {
+      width: calculateRem(16px);
+      height: calculateRem(16px);
+    }
+  }
+
+  &__seat-icon {
+    width: calculateRem(23px);
+    height: calculateRem(21px);
+    margin-right: calculateRem(10px);
+
+    @include isTablet() {
+      width: calculateRem(16px);
+      height: calculateRem(16px);
+    }
+  }
+
+  &__download {
+    padding-left: calculateRem(32px);
+
+    @include isLandscapetablet() {
+      padding-left: 0;
+    }
+
+    &-button {
+      @include fontSize(22px);
+      letter-spacing: 0.26px;
+      height: calculateRem(64px);
+      border-radius: calculateRem(12px);
+      width: 100%;
+      border: calculateRem(4px) solid var(--downlooad-border-color);
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+        height: calculateRem(50px);
+        margin-bottom: calculateRem(32px);
+      }
+    }
+
+    &-icon {
+      width: calculateRem(21px);
+      height: calculateRem(21px);
+      margin-right: calculateRem(17px);
+
+      @include isTablet() {
+        width: calculateRem(17px);
+        height: calculateRem(17px);
+        margin-right: calculateRem(12px);
+      }
+    }
+  }
+}

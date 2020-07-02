@@ -1,0 +1,38 @@
+@import '../../../../styles/partials/all';
+
+.ing-seats-wrapper {
+  height: 100%;
+  background-color: var(--body-background-white);
+  &__loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+  }
+
+  button{
+    @include widgetButton();
+    margin-top: 10px;
+  }
+
+  &--loading{
+    > div:not(.loading-spinner){
+      display: none;
+    }
+  }
+
+  &--loaded:last-child{
+    div{
+      display: block;
+    }
+  }
+}
+
+.ing-seats-picker {
+  height: 600px;
+
+  &__widget-selector {
+    height: 100%;
+  }
+}

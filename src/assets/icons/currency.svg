@@ -1,0 +1,13 @@
+<svg id="Icon_-_Currency" data-name="Icon - Currency" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20.924 16.739">
+  <rect id="Rectangle_1972" data-name="Rectangle 1972" width="20.63" height="16.504" transform="translate(0 0.038)" fill="#7a49a0" opacity="0"/>
+  <g id="cash">
+    <path id="Path_8653" data-name="Path 8653" d="M65.437,369.395H48.7a.7.7,0,1,1,0-1.395H65.437a.7.7,0,1,1,0,1.395Z" transform="translate(-46.605 -354.748)" fill="#7a49a0"/>
+    <path id="Path_8654" data-name="Path 8654" d="M94.647,417.395H80.7a.7.7,0,1,1,0-1.395H94.647a.7.7,0,1,1,0,1.395Z" transform="translate(-77.21 -400.656)" fill="#7a49a0"/>
+    <path id="Path_8655" data-name="Path 8655" d="M16.7,272H16v2.092a1.4,1.4,0,0,0,1.395,1.395h2.092v-.7A2.793,2.793,0,0,0,16.7,272Z" transform="translate(-16 -262.933)" fill="#7a49a0"/>
+    <path id="Path_8656" data-name="Path 8656" d="M36.227,71.672h.7v-2.79h-.7A4.19,4.19,0,0,1,32.042,64.7V64H20.882v.7A4.19,4.19,0,0,1,16.7,68.882H16v2.79h.7a4.19,4.19,0,0,1,4.185,4.185v.7H32.042v-.7a4.19,4.19,0,0,1,4.185-4.185Zm-9.765,2.79a4.185,4.185,0,1,1,4.185-4.185,4.185,4.185,0,0,1-4.185,4.185Z" transform="translate(-16 -64)" fill="#7a49a0"/>
+    <ellipse id="Ellipse_45" data-name="Ellipse 45" cx="2.888" cy="2.888" rx="2.888" ry="2.888" transform="translate(7.427 3.339)" fill="#7a49a0"/>
+    <path id="Path_8657" data-name="Path 8657" d="M416,274.79v.7h2.092a1.4,1.4,0,0,0,1.395-1.395V272h-.7A2.793,2.793,0,0,0,416,274.79Z" transform="translate(-398.563 -262.933)" fill="#7a49a0"/>
+    <path id="Path_8658" data-name="Path 8658" d="M418.79,67.487h.7V65.395A1.4,1.4,0,0,0,418.092,64H416v.7A2.793,2.793,0,0,0,418.79,67.487Z" transform="translate(-398.563 -64)" fill="#7a49a0"/>
+    <path id="Path_8659" data-name="Path 8659" d="M19.487,64.7V64H17.395A1.4,1.4,0,0,0,16,65.395v2.092h.7A2.793,2.793,0,0,0,19.487,64.7Z" transform="translate(-16 -64)" fill="#7a49a0"/>
+  </g>
+</svg>

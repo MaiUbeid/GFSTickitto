@@ -1,0 +1,374 @@
+@import '../../styles/partials/all';
+
+$small-card-title-font-size: 26px;
+$large-card-title-font-size: 32px;
+$card-description-font-size: 18px;
+$mobile-card-description-font-size: $card-description-font-size - 7px;
+$card-price-font-size: 41px;
+$mobile-card-price-font-size: $card-price-font-size - 17px;
+$card-location-font-size: 22px;
+$card-location-icon-width: 18px;
+$card-location-icon-height: 23px;
+
+$card-result-image-right-padding: 46px;
+
+$icon-size: 24px;
+$mobile-icon-size: 18px;
+
+$location-icon-size: $icon-size;
+$location-icon-righ-padding: 15px;
+
+.common-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: calculateRem(18px);
+  box-shadow: 0px 4px 8px var(--shadow-color);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+  background-color: var(--card-secondary-bg-color);
+
+  &:focus {
+    outline: none;
+  }
+
+  @include isTablet() {
+    flex-direction: row;
+    border-radius: calculateRem(10px);
+  }
+
+  &:hover {
+    box-shadow: 0px 4px 8px var(--shadow-color-hover);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  &__image {
+    position: relative;
+    height: calculateRem(207px);
+    width: 100%;
+
+    @include isTablet() {
+      height: 100%;
+      width: calculateRem(81px);
+    }
+
+    &__banner {
+      background-color: var(--card-tag-background-color);
+      width: 12rem;
+      height: calculateRem(46px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: calculateRem(13px) calculateRem(30px);
+      position: absolute;
+      top: calculateRem(35px);
+      right: 0;
+      box-shadow: -4px 4px 8px var(--shadow-color);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10% 50%, 10% 50%);
+
+      @include isTablet() {
+        width: 10rem;
+        height: calculateRem(35px);
+        top: calculateRem(25px);
+      }
+
+      .ant-typography {
+        color: var(--card-tag-text-color);
+      }
+
+      svg {
+        width: calculateRem($icon-size);
+        height: calculateRem($icon-size);
+        margin-left: 0rem;
+
+        @include isTablet() {
+          width: calculateRem(16px);
+          height: calculateRem(16px);
+        }
+      }
+
+      &--text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.29px;
+        @include fontSize(16px);
+
+        @include isTablet() {
+          @include fontSize(14px);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    height: calculateRem(80px);
+    &__text {
+      padding: 0 calculateRem(28px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      font-family: var(--primary-font-family);
+      color: var(--secondary-color);
+      @include fontSize(26px);
+
+      @include isTablet() {
+        padding: 0 calculateRem(20px);
+        @include fontSize(26px - 9px);
+      }
+
+      &__icon {
+        height: calculateRem($icon-size - 3px);
+        width: calculateRem($icon-size - 3px);
+        margin-right: calculateRem(28px);
+
+        @include isTablet() {
+          height: calculateRem($mobile-icon-size);
+          width: calculateRem($mobile-icon-size);
+          margin-right: calculateRem(12px);
+        }
+      }
+    }
+  }
+}
+
+.common-large-card,
+.result-card {
+  width: 100%;
+
+  .common-card__image {
+    height: calculateRem(268px);
+  }
+
+  .common-card__content {
+    height: calculateRem(319px);
+    display: flex;
+    flex-direction: column;
+
+    .common-card__content__text {
+      height: unset;
+      @include fontSize($large-card-title-font-size);
+      font-weight: 500;
+      color: black;
+      padding: calculateRem(32px) calculateRem($card-result-image-right-padding)
+        calculateRem(7px) calculateRem($card-result-image-right-padding);
+
+      @include isTablet() {
+        @include fontSize($large-card-title-font-size - 8px);
+        padding: calculateRem(24px)
+          calculateRem($card-result-image-right-padding / 2) calculateRem(5px)
+          calculateRem($card-result-image-right-padding / 2);
+      }
+    }
+
+    &__description {
+      flex-grow: 1;
+      overflow: hidden;
+      padding: 0 calculateRem($card-result-image-right-padding);
+      color: var(--card-paragraph-color);
+      @include fontSize($card-description-font-size);
+
+      @include isTablet() {
+        @include fontSize($card-description-font-size - 4px);
+        padding: 0 calculateRem($card-result-image-right-padding / 2);
+      }
+    }
+
+    &__location {
+      padding: calculateRem(7px) calculateRem($card-result-image-right-padding)
+        calculateRem(31px) calculateRem($card-result-image-right-padding);
+      font-weight: 400;
+      @include fontSize($card-location-font-size);
+
+      &__icon {
+        height: calculateRem($location-icon-size);
+        width: calculateRem($location-icon-size);
+        margin-right: calculateRem($location-icon-righ-padding);
+      }
+
+      span {
+        color: var(--card-location-text-color);
+      }
+    }
+
+    @include isTablet() {
+      &__location {
+        padding: calculateRem(7px)
+          calculateRem($card-result-image-right-padding / 2) calculateRem(11px)
+          calculateRem($card-result-image-right-padding / 2);
+        font-weight: 400;
+        @include fontSize($card-location-font-size - 8px);
+
+        &__icon {
+          height: calculateRem($location-icon-size / 2);
+          width: calculateRem($location-icon-size / 2);
+          margin-right: calculateRem($location-icon-righ-padding / 2);
+        }
+
+        span {
+          color: var(--card-location-text-color);
+        }
+      }
+    }
+  }
+
+  .card-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-actions-background);
+    height: calculateRem(118px);
+    min-height: calculateRem(118px);
+    padding: 0 calculateRem(46px);
+
+    @include isTablet() {
+      height: calculateRem(81px);
+      min-height: calculateRem(81px);
+      padding: 0 calculateRem(20px);
+    }
+
+    &__button {
+      width: calculateRem(239px);
+      height: calculateRem(64px);
+      button {
+        height: 100%;
+        width: 100%;
+      }
+
+      @include isTablet() {
+        width: calculateRem(155px);
+        height: calculateRem(50px);
+
+        button {
+          @include fontSize(16px);
+
+          svg {
+            height: calculateRem(18px);
+            width: calculateRem(18px);
+            margin-right: calculateRem(10px);
+          }
+        }
+      }
+    }
+
+    &__text {
+      display: flex;
+      padding-right: calculateRem(20px);
+
+      &__price {
+        @include flexCenter();
+        font-family: var(--primary-font-family);
+        font-weight: 700;
+        letter-spacing: calculateRem(0.49px);
+        color: var(--primary-color);
+        margin-left: 0.1rem;
+        @include fontSize($card-price-font-size);
+
+        @include isTablet() {
+          @include fontSize($mobile-card-price-font-size);
+        }
+
+        &-prefix {
+          color: var(--card-paragraph-color);
+          font-weight: 500;
+          letter-spacing: calculateRem(0.26px);
+          padding-top: calculateRem(
+            $card-price-font-size - $card-description-font-size
+          );
+          padding-right: calculateRem(7px);
+          font-family: var(--primary-font-family);
+          @include fontSize($card-description-font-size);
+
+          @include isTablet() {
+            padding-top: calculateRem(
+              $mobile-card-price-font-size - $mobile-card-description-font-size
+            );
+            padding-right: calculateRem(5px);
+            @include fontSize($mobile-card-description-font-size);
+          }
+        }
+      }
+    }
+  }
+}
+
+.result-card {
+  flex-direction: row;
+  width: 100%;
+  height: calculateRem(431px);
+
+  @include isTablet() {
+    height: auto;
+  }
+
+  .common-card__image {
+    height: 100%;
+    width: 35%;
+  }
+
+  .common-card__content {
+    height: 100%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+      //FIXME
+      height: unset;
+      @include fontSize(24px);
+      font-weight: 500;
+      color: black;
+      padding: calculateRem(32px) calculateRem(46px) calculateRem(7px)
+        calculateRem(46px);
+    }
+  }
+}
+
+@include isTablet() {
+  .common-large-card,
+  .result-card {
+    flex-direction: column;
+
+    .common-card__image {
+      height: calculateRem(171px);
+      width: 100%;
+    }
+
+    .common-card__content {
+      height: calc(100% - #{calculateRem(171px)});
+      width: 100%;
+    }
+  }
+}
+
+.category-card {
+  .common-card__content {
+    &__text {
+      justify-content: center;
+      flex-direction: row-reverse;
+      text-transform: capitalize;
+
+      &__icon {
+        height: calculateRem($icon-size - 3px);
+        width: calculateRem($icon-size - 3px);
+        margin: 0;
+        margin-left: calculateRem(20px);
+
+        @include isTablet() {
+          height: calculateRem(9px);
+          width: calculateRem(9px);
+          margin-left: calculateRem(12px);
+        }
+      }
+    }
+  }
+}

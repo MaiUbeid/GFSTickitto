@@ -1,0 +1,41 @@
+@import '../../styles/partials/all.scss';
+
+.bottom-modal {
+  width: 100%;
+  background-color: trasparent;
+  position: relative;
+
+  @include isTablet() {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+  }
+
+  &__content {
+    width: 100%;
+
+    @include isTablet() {
+      background-color: white;
+      border-radius: 10px 10px 0px 0px;
+
+      & > div {
+        margin: 0;
+        padding: calculateRem(18px) calculateRem(14px) calculateRem(20px)
+          calculateRem(14px);
+      }
+      .popup-cart {
+        padding: 0;
+      }
+      .popup-settings {
+        padding: 0;
+      }
+    }
+  }
+}

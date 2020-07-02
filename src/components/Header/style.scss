@@ -1,0 +1,456 @@
+@import '../../styles/partials/all';
+
+$home-page-title-font-size: 58px;
+$home-page-sub-title-font-size: 32px;
+$mobile-home-page-title-font-size: $home-page-title-font-size - 26px;
+$mobile-home-page-sub-title-font-size: $home-page-sub-title-font-size - 14px;
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.header {
+  position: relative;
+  background-size: cover;
+  background-position-y: 71%;
+  padding: 0;
+  top: 0;
+
+  &__home {
+    &-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay-bg-color) 0% 0%;
+      opacity: 0.15;
+      @include isMobile() {
+        opacity: 0.5;
+      }
+    }
+
+    &-box {
+      top: calculateRem(250px + $menu-height);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      @include isMobile() {
+        top: calculateRem(100px + $menu-height);
+      }
+    }
+  }
+
+  &__search {
+    &-box {
+      top: calculateRem(90px + $menu-height);
+      left: calculateRem(132px);
+
+      @include isMobile() {
+        top: calculateRem(40px + $menu-height);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .ant-typography {
+          font-size: calculateRem(32px);
+        }
+      }
+    }
+    &__picker {
+      top: calculateRem(100px + $menu-height);
+      @include isMobile() {
+        top: calculateRem(15px + $menu-height);
+      }
+    }
+  }
+
+  &__picker {
+    top: calculateRem(134px + $menu-height);
+    @include isMobile() {
+      top: calculateRem(150px);
+    }
+  }
+
+  &__results {
+    &-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent
+        linear-gradient(90deg, #000000 0%, #000000bf 39%, #00000000 100%) 0% 0%;
+      opacity: 0.6;
+    }
+
+    &-box {
+      top: calculateRem(106px + $menu-height);
+      left: calculateRem(132px);
+
+      @include isTablet() {
+        left: 20%;
+      }
+      @include isMobile() {
+        top: calculateRem(180px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        .header__title {
+          @include fontSize(32px);
+          letter-spacing: -0.61px;
+        }
+      }
+    }
+  }
+
+  &__others {
+    &-box {
+      top: calculateRem(97px + $menu-height);
+      left: calculateRem(132px);
+      @include isMobile() {
+        top: calculateRem(40px + $mobile-menu-height);
+        left: calculateRem(14px);
+        .header__title {
+          @include fontSize(36px);
+          letter-spacing: -0.68px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: var(--breadcrumb-text-color);
+
+    &-box {
+      position: absolute;
+    }
+
+    &-search {
+      font-style: italic;
+    }
+
+    &-location {
+      font-weight: 700;
+    }
+
+    &-search {
+      font-style: italic;
+    }
+
+    &-location {
+      font-weight: 700;
+    }
+  }
+
+  &__formpage {
+    .ant-btn-link {
+      color: var(--secondary-text-color);
+      font-family: var(--secondary-font-family);
+      letter-spacing: -0.13px;
+    }
+
+    &-breadcrumb {
+      position: absolute;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.13px;
+      top: calculateRem(35px + $menu-height);
+      left: calculateRem(132px);
+      font-weight: 600;
+      font-family: var(--secondary-font-family);
+      letter-spacing: -0.13px;
+      @include fontSize(22px);
+
+      @include isMobile() {
+        top: calculateRem(72px);
+        left: calculateRem(14px);
+        @include fontSize(13px);
+      }
+
+      svg {
+        width: calculateRem(10px);
+        margin-right: calculateRem(15px);
+        @include isMobile() {
+          width: calculateRem(6px);
+          height: calculateRem(9px);
+          margin-right: calculateRem(10px);
+        }
+      }
+    }
+  }
+
+  &-title {
+    &__main {
+      font-family: var(--secondary-font-family);
+      color: var(--breadcrumb-text-color);
+      @include fontSize($home-page-title-font-size);
+      letter-spacing: -1.04px;
+      font-weight: 700;
+      display: block;
+      opacity: 1;
+
+      @include isTablet() {
+        @include fontSize($mobile-home-page-title-font-size);
+      }
+    }
+
+    &__sub {
+      font-family: var(--secondary-font-family);
+      color: var(--breadcrumb-text-color);
+      @include fontSize($home-page-sub-title-font-size);
+      letter-spacing: -0.38px;
+      font-weight: 600;
+      display: block;
+      opacity: 1;
+      margin-top: calculateRem(10px);
+
+      @include isTablet() {
+        @include fontSize($mobile-home-page-sub-title-font-size);
+      }
+    }
+  }
+
+  &__title {
+    color: var(--breadcrumb-text-color);
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    letter-spacing: -0.68px;
+    text-transform: capitalize;
+    @include fontSize(36px);
+
+    @include isTablet() {
+      @include fontSize(28px);
+    }
+  }
+
+  &__images {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    &--one {
+      position: absolute;
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+    &--two {
+      position: absolute;
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 33.3%;
+    cursor: pointer;
+    object-fit: cover;
+    &--one {
+      width: 100%;
+      cursor: pointer;
+    }
+    &--two {
+      width: 50%;
+      cursor: pointer;
+    }
+  }
+
+  &__event {
+    &-button {
+      position: absolute;
+      top: calculateRem(534px);
+      right: calculateRem(132px);
+      width: calculateRem(234px);
+      height: calculateRem(64px);
+      border: calculateRem(3px) solid var(--event-btn-bg-color);
+      border-bottom: none;
+      border-radius: calculateRem(12px);
+      font-family: var(--secondary-font-family);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include fontSize(21px);
+      &:hover {
+        border: calculateRem(4px) solid var(--event-btn-bg-color);
+        border-bottom: none;
+        height: calculateRem(64px);
+        background-color: var(--primary-color);
+      }
+      svg {
+        width: calculateRem(7px);
+      }
+
+      @include isTablet() {
+        display: none;
+      }
+    }
+  }
+}
+
+.ant {
+  &-steps:not(.ant-steps-vertical) {
+    .ant-steps-item-custom {
+      .ant-steps-item-icon {
+        width: calculateRem(34px);
+        @include isLargeDesktop() {
+          width: calculateRem(24px);
+        }
+      }
+    }
+  }
+
+  &-steps.ant-steps-horizontal {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    top: calculateRem(60px);
+    left: calculateRem(132px);
+    @include isMobile() {
+      top: calculateRem(30px);
+      left: calculateRem(14px);
+    }
+
+    .ant-steps-item {
+      width: 25%;
+      overflow: hidden;
+
+      &-title {
+        position: inherit;
+        padding-left: 5rem;
+        font-family: var(--primary-font-family);
+        font-weight: 600;
+        letter-spacing: 0.7px;
+        @include isLargeDesktop() {
+          display: none;
+        }
+      }
+
+      .ant-steps-item-container {
+        .ant-steps-item-content {
+          .ant-steps-item-title::after {
+            top: 27.5px;
+            background-color: var(--steps-bg-color);
+          }
+        }
+      }
+
+      &-wait {
+        .ant-steps-item-container {
+          .ant-steps-item-content {
+            .ant-steps-item-title {
+              color: var(--steps-secondary-text-color);
+              font-family: var(--secondary-font-family);
+              @include fontSize(22px);
+              font-weight: 600;
+              letter-spacing: 0.18px;
+            }
+          }
+        }
+      }
+
+      &-process,
+      &-finish {
+        .ant-steps-item-container {
+          .ant-steps-item-content {
+            .ant-steps-item-title {
+              color: var(--steps-text-color);
+              font-weight: 500;
+              @include fontSize(22px);
+              letter-spacing: 0.26px;
+            }
+          }
+        }
+      }
+
+      &-custom {
+        .ant-steps-item-icon {
+          position: absolute;
+          left: 1.5rem;
+          @include isLargeDesktop() {
+            left: calculateRem(11.5px);
+          }
+        }
+      }
+
+      &-finish,
+      &-active {
+        .ant-steps-item-container {
+          background-color: var(--steps-bg-color);
+        }
+      }
+
+      &-container {
+        box-shadow: 0px 4px 8px var(--shadow-color);
+        border: calculateRem(3px) solid var(--card-border-color);
+        width: calculateRem(385px);
+        height: calculateRem(88px);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: calculateRem(12px);
+        position: absolute;
+        top: 45%;
+        background: linear-gradient(
+            var(--card-border-color),
+            var(--card-border-color)
+          )
+          no-repeat 5.12rem/0.1rem 100%;
+
+        @include isLargeDesktop() {
+          background: none;
+          height: calculateRem(55px);
+          width: calculateRem(54px);
+          border-radius: calculateRem(10px);
+          box-shadow: 0px 4px 8px #0000001f;
+        }
+        @include isLargeDesktop() {
+          &::after {
+            position: absolute;
+            top: 17px;
+            left: 100%;
+            display: block;
+            width: 1000%;
+            height: 2px;
+            background: #ebe6ef;
+            content: '';
+            @include isMobile() {
+              width: 140000%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
+  margin-right: 0;
+}
+
+.ant-steps-item-icon,
+.ant-steps-item-content {
+  display: flex;
+}
+
+@include isLargeDesktop() {
+  .ant-steps-horizontal.ant-steps-label-horizontal .ant-steps-item-content {
+    min-height: 0;
+  }
+}
+
+.ant-menu-horizontal > .ant-menu-item {
+  border-bottom: none;
+}
+
+.ant-steps-horizontal.ant-steps-label-horizontal {
+  display: flex;
+  @include isLargeDesktop() {
+    width: 100%;
+  }
+}
+.ant-steps-horizontal:not(.ant-steps-label-vertical)
+  .ant-steps-item:last-child {
+  .ant-steps-item-container {
+    &::after {
+      display: none;
+    }
+  }
+}

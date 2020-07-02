@@ -1,0 +1,96 @@
+@import '../../styles/partials/all.scss';
+
+.dropdown {
+  position: relative;
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: calculateRem(64px);
+    border-radius: calculateRem(12px);
+    border: calculateRem(2px) solid var(--input-border-color);
+    background-color: var(--dropdown-secondary-color);
+    padding: 0;
+
+    @include isTablet() {
+      height: calculateRem(50px);
+      border-radius: calculateRem(10px);
+    }
+
+    .ant-select-selection-search-input {
+      height: calculateRem(64px);
+
+      @include isTablet() {
+        height: calculateRem(50px);
+      }
+    }
+  }
+
+  .ant-select-dropdown {
+    z-index: 1;
+
+    @include isTablet() {
+      z-index: 1000;
+    }
+  }
+
+  .ant-select-show-arrow {
+    .ant-select-arrow {
+      transition: transform 0.2s ease-in-out;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .ant-select-open {
+    .ant-select-arrow {
+      transition: transform 0.2s ease-in-out;
+      transform: rotate(90deg);
+    }
+  }
+
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    color: var(--dropdown-text-color);
+    font-family: var(--primary-font-family);
+    font-weight: 500;
+    letter-spacing: 0.26px;
+    opacity: 1;
+    margin: auto 1rem;
+    @include fontSize(22px);
+    @include isMobile() {
+      @include fontSize(16px);
+    }
+  }
+
+  .ant-select-arrow {
+    color: var(--dropdown-arrow-dark-color);
+    width: calculateRem(16px);
+    height: calculateRem(16px);
+    right: calculateRem(16px);
+    @include fontSize(16px);
+    @include isMobile() {
+      width: calculateRem(10px);
+      height: calculateRem(10px);
+    }
+  }
+
+  &__select {
+    width: 100%;
+    margin: calculateRem(16px) auto;
+  }
+
+  &__option {
+    width: 100%;
+    height: calculateRem(64px);
+    padding-top: calculateRem(16px);
+    color: var(--dropdown-text-color);
+    font-weight: 500;
+    letter-spacing: 0.26px;
+    @include fontSize(18px);
+
+    @include isTablet() {
+      height: calculateRem(50px);
+    }
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: #fff;
+  }
+}

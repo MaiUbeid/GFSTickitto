@@ -1,0 +1,96 @@
+{
+  "name": "tickitto",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@sentry/browser": "^5.15.5",
+    "antd": "4.0.3",
+    "classnames": "^2.2.6",
+    "css-element-queries": "^1.2.3",
+    "easy-currencies": "^1.3.1",
+    "es6-promise": "^4.2.8",
+    "eslint-plugin-jest": "^23.8.2",
+    "http-proxy-middleware": "^1.0.3",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash.get": "^4.4.2",
+    "lodash.isequal": "^4.5.0",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-google-maps": "^9.4.5",
+    "react-inlinesvg": "^1.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-spring": "^8.0.27",
+    "url-search-params-polyfill": "^8.1.0"
+  },
+  "scripts": {
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test --env=jest-environment-jsdom-sixteen",
+    "lint": "eslint --fix",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "rescripts": [
+    ".rescriptsrc.js"
+  ],
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.14",
+    "@rescripts/rescript-env": "^0.0.12",
+    "@rescripts/rescript-use-babel-config": "^0.0.10",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@testing-library/user-event": "^10.0.2",
+    "antd-theme-webpack-plugin": "^1.3.1",
+    "babel-plugin-import": "^1.13.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "husky": "^4.2.3",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "less-vars-to-js": "^1.3.0",
+    "lint-staged": "^10.0.8",
+    "mini-css-extract-plugin": "^0.9.0",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.13.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "serve": "^11.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/**/*.{js,jsx}": [
+      "eslint --fix"
+    ]
+  }
+}

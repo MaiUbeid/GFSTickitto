@@ -1,0 +1,11 @@
+@import '../../styles//partials/all';
+
+.error-overlay{
+  position: absolute;
+  min-height: 400px;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--body-background-secondary);
+  @include flexCenter();
+}

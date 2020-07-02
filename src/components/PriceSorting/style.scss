@@ -1,0 +1,77 @@
+@import '../../styles/partials/all';
+
+.price-sorting {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: calculateRem(45px);
+
+    @include isTablet() {
+      padding-top: calculateRem(30px);
+    }
+
+    &-button {
+      @include isTablet() {
+        display: none;
+      }
+    }
+
+    &-icon {
+      width: calculateRem(20px);
+      height: calculateRem(32px);
+    }
+  }
+
+  &__title {
+    padding-bottom: calculateRem(30px);
+    padding-right: calculateRem(205px);
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--label-color);
+    letter-spacing: 0.47px;
+    @include fontSize(26px);
+
+    @include isTablet() {
+      @include fontSize(22px);
+      letter-spacing: 0.4px;
+      padding-bottom: calculateRem(20px);
+    }
+  }
+
+  &-icon {
+    width: calculateRem(20px);
+    height: calculateRem(32px);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+
+    .radio-button {
+      font-family: var(--primary-font-family);
+      letter-spacing: 0.26px;
+      vertical-align: middle;
+      color: var(--label-color);
+      @include fontSize(20px);
+
+      @include isTablet() {
+        @include fontSize(18px);
+        letter-spacing: 0.22px;
+      }
+
+      .ant-radio-wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &--hide {
+      display: none;
+    }
+
+    .second-radio {
+      padding-top: calculateRem(16px);
+    }
+  }
+}

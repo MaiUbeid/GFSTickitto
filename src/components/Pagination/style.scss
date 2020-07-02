@@ -1,0 +1,158 @@
+@import '../../styles/partials/all';
+
+.pagination {
+  text-align: center;
+
+  .ant-pagination {
+    &-item {
+      font-family: var(--primary-font-family);
+      border: calculateRem(3px) solid var(--pagination-border-color);
+      background-color: var(--input-bg);
+      border-radius: calculateRem(6px);
+      margin-right: calculateRem(16px);
+      line-height: calculateRem(44px);
+      @include fontSize(22px);
+      letter-spacing: 0.26px;
+      font-weight: 500;
+
+      &-active {
+        background-color: var(--pagination-item-bg-active);
+        a {
+          color: var(--pagination-text-color-active);
+        }
+      }
+    }
+
+    &-jump-prev,
+    &-jump-next {
+      margin-right: calculateRem(14px);
+
+      .ant-pagination-item-container {
+        .ant-pagination-item-ellipsis {
+          color: var(--pagination-ellipsis-color);
+          @include fontSize(22px);
+        }
+        .ant-pagination-item-link-icon {
+          @include fontSize(26px);
+        }
+      }
+    }
+
+    &-prev,
+    &-next {
+      margin-right: calculateRem(16px);
+
+      .ant-pagination-item-link {
+        border-radius: calculateRem(6px);
+        border: calculateRem(3px) solid var(--pagination-border-color);
+        background-color: var(--input-bg);
+
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    &-prev {
+      .ant-pagination-item-link {
+        background: url(../../assets/icons/BlackLeftAngle.svg) no-repeat center;
+        background-size: calculateRem(9px);
+        background-color: var(--input-bg);
+      }
+    }
+
+    &-next {
+      .ant-pagination-item-link {
+        background: url(../../assets/icons/BlackRigthAngle.svg) no-repeat center;
+        background-size: calculateRem(9px);
+        background-color: var(--input-bg);
+      }
+    }
+  }
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: calculateRem(54px);
+    border: calculateRem(3px) solid var(--pagination-border-color);
+    padding: calculateRem(8px) calculateRem(10px);
+    border-radius: calculateRem(6px);
+    background-color: transparent;
+  }
+
+  .ant-select-arrow {
+    color: var(--pagination-item-bg-active);
+    .anticon > svg {
+      width: calculateRem(16px);
+      height: calculateRem(16px);
+    }
+  }
+
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    font-family: var(--primary-font-family);
+    color: var(--pagination-arrow-color);
+    @include fontSize(16px);
+    padding-right: calculateRem(10px);
+  }
+
+  &-options {
+    margin-top: 2rem;
+    font-family: var(--primary-font-family);
+    color: var(--dropdown-text-color);
+    @include fontSize(18px);
+
+    &__dropdown {
+      display: inline-block;
+      margin: auto 1rem;
+      font-family: var(--primary-font-family);
+      color: var(--dropdown-text-color);
+      @include fontSize(16px);
+    }
+
+    &--top {
+      position: absolute;
+      top: 1%;
+      right: 8%;
+    }
+
+    @include isLandscapetablet() {
+      &--top {
+        display: none;
+      }
+    }
+
+    &__text {
+      font-weight: 400;
+      @include fontSize(18px);
+      color: var(--pagination-arrow-color);
+    }
+
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      height: calculateRem(40px);
+      width: calculateRem(90px);
+      border: calculateRem(3px) solid var(--dropdown-border-color);
+      border-radius: calculateRem(6px);
+      background-color: transparent;
+      font-weight: 500;
+      @include fontSize(18px);
+    }
+
+    .ant-select-arrow {
+      color: var(--dropdown-arrow-color);
+      .anticon > svg {
+        width: calculateRem(16px);
+        height: calculateRem(16px);
+      }
+    }
+
+    .ant-select:not(.ant-select-disabled):hover .ant-select-selector,
+    .ant-select-focused.ant-select-single:not(.ant-select-customize-input)
+      .ant-select-selector {
+      border-right-width: calculateRem(3px) !important;
+    }
+
+    .ant-select-single .ant-select-selector .ant-select-selection-item,
+    .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+      line-height: calculateRem(36px);
+    }
+  }
+}

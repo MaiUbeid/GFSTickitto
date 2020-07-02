@@ -1,0 +1,133 @@
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin textOfCartActions {
+  letter-spacing: 0.47px;
+  color: var(--label-color);
+  font-weight: 500;
+  @include fontSize(26px);
+}
+
+@mixin priceOfCartActions {
+  font-family: var(--secondary-font-family);
+  font-weight: 600;
+  letter-spacing: -0.31px;
+  color: var(--price-text-color);
+  @include fontSize(26px);
+}
+
+@mixin pointyTriangleOnDiv() {
+  &:before {
+    height: 22px;
+    width: 22px;
+    top: -11px;
+    left: 50%;
+    border: inherit;
+    background-color: inherit;
+    content: '';
+    position: absolute;
+    transform: translate(-50%) rotate(-45deg);
+    clip-path: polygon(
+      100% 0,
+      0 0,
+      100% 100%
+    ); //makes is so you only see a triangle of the div
+    @content;
+  }
+}
+
+@mixin inputStyle {
+  background-color: var(--input-bg);
+  height: calculateRem(64px);
+  color: var(--secondary-color);
+  font-weight: 400;
+  text-align: left;
+  box-shadow: none;
+  border-color: var(--input-border-color);
+  .ant-input {
+    color: var(--secondary-color);
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    @include fontSize(22px);
+    @include isMobile() {
+      @include fontSize(16px);
+    }
+  }
+  .ant-input::placeholder {
+    color: var(--secondary-color);
+  }
+}
+
+@mixin inputWrapperStyle {
+  .ant-input-affix-wrapper {
+    &:focus,
+    &-focused,
+    &:hover {
+      border-color: var(--input-border-color);
+    }
+
+    .ant-input-prefix {
+      display: flex;
+    }
+  }
+}
+
+@mixin multilineEllipsis() {
+  /* styles for '...' */
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative;
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 3.6em;
+  /* fix problem when last visible word doesn't adjoin right side  */
+  text-align: justify;
+  /* place for '...' */
+  margin-right: -1em;
+  padding-right: 1em;
+
+  /* create the ... */
+  &:before {
+    /* points in the end */
+    content: '...';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of block */
+    right: 0;
+    bottom: 0;
+  }
+  /* hide ... if we have text, which is less than or equal to max lines */
+  &:after {
+    /* points in the end */
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 0;
+    /* set width and height */
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    /* bg color = bg color under block */
+    background: white;
+  }
+}
+
+@mixin widgetButton(){
+  margin-left: calc(100% - #{calculateRem(262px)});
+  height: calculateRem(86px);
+  width: calculateRem(262px);
+  @include fontSize(29px);
+
+  @include isTablet(){
+    margin: auto;
+    height: calculateRem(55px);
+    width: calculateRem(216px);
+    @include fontSize(19px);
+  }
+}

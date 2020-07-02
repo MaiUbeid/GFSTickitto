@@ -1,0 +1,28 @@
+@import '../../../../styles/partials/all';
+.performance-pick{
+  background-color: white;
+  width: 100%;
+  @include flexCenter;
+  align-items: unset; //don't want them vertically centered
+  .calendar{
+    flex: 1;
+  }
+  &__slot-panel{
+    padding: 0 calculateRem(83px);
+    flex: 1;
+    background-color: transparent;
+
+    @include isTablet(){
+      padding: 0 calculateRem(43px);
+    }
+    
+    button{
+      @include widgetButton();
+      margin-right: 0;
+      // @include fontSize(26px);
+      // height: calculateRem(86px);
+      // width: calculateRem(262px);
+      // margin-left: calc( 100% - #{calculateRem(300px)})
+    }
+  }
+}

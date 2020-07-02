@@ -1,0 +1,27 @@
+
+[[redirects]] # tickitto api endpoint
+  from = "/tkt/api/*"
+  to = "http://34.89.51.164/api/:splat"
+  status = 200
+  force = true
+  headers = {X-Froms = "Netlify1 to: http://34.89.51.164/api/:splat"}
+  
+[[redirects]] # ingresso api, used for availability 
+  from = "/f13/*"
+  to = "https://api.ticketswitch.com/f13/:splat"
+  status = 200
+  force = true
+  headers = {X-Froms = "Netlify2 to: https://api.ticketswitch.com/f13/:splat"}
+
+[[redirects]] # ingresso api, used for feather token 
+  from = "/api/*"
+  to = "https://b2b.ingresso.co.uk/api/:splat"
+  status = 200
+  force = true
+  headers = {X-Froms = "Netlify3 to: https://b2b.ingresso.co.uk/api/:splatt"}
+
+[[redirects]] # this is needed for react router
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  headers = {X-Froms = "Netlify4 to: /index.html"}

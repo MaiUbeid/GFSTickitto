@@ -1,0 +1,504 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.shopping-cart {
+  &__body {
+    position: relative;
+    padding-top: calculateRem(95px);
+    padding-right: calculateRem(132px);
+    padding-left: calculateRem(132px);
+    @include isTablet() {
+      padding-right: calculateRem(15px);
+      padding-left: calculateRem(15px);
+      padding-top: calculateRem(48px);
+    }
+  }
+  &__header {
+    height: calculateRem(238px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(140 + $mobile-menu-height);
+    }
+  }
+  &__title {
+    .ant-typography {
+      @include fontSize(44px);
+      letter-spacing: 0.79px;
+      color: var(--label-color);
+      @include isMobile() {
+        @include fontSize(28px);
+      }
+    }
+  }
+  &__tickets {
+    width: 100%;
+    padding-top: calculateRem(41px);
+    margin-top: calculateRem(42px);
+    margin-right: calculateRem(50px);
+    box-shadow: 0px 8px 16px #0000000f;
+    border-color: var(--input-border-color);
+    border-radius: calculateRem(18px);
+    @include isLandscapetablet() {
+      margin-right: 0;
+      margin-bottom: calculateRem(48px);
+      margin-top: calculateRem(20px);
+    }
+    @include isTablet() {
+      padding-top: 0;
+    }
+
+    .ant-card {
+      &-body {
+        @include isTablet() {
+          padding: calculateRem(20px);
+          padding-bottom: 0;
+        }
+      }
+      &-meta {
+        margin: 0;
+        @include isTablet() {
+          display: flex;
+          flex-direction: column;
+        }
+        &-avatar {
+          padding-left: 0;
+          padding-right: 0;
+          @include isTablet() {
+            position: relative;
+            height: calculateRem(172px);
+            width: 100%;
+          }
+        }
+      }
+      &-actions {
+        height: calculateRem(104px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: calculateRem(47px);
+        padding-right: calculateRem(50px);
+        border-bottom-right-radius: calculateRem(18px);
+        border-bottom-left-radius: calculateRem(18px);
+        border-top: none;
+        @include isTablet() {
+          height: calculateRem(72px);
+          min-height: calculateRem(72px);
+          padding-left: calculateRem(20px);
+          padding-right: calculateRem(20px);
+          border-bottom-right-radius: calculateRem(10px);
+          border-bottom-left-radius: calculateRem(10px);
+        }
+      }
+    }
+  }
+  &__ticket {
+    margin-bottom: calculateRem(57px);
+    @include isMobile() {
+      margin-bottom: calculateRem(37px);
+    }
+
+    .ant-typography {
+      color: var(--label-color);
+      letter-spacing: 0.47px;
+      @include fontSize(26px);
+      margin-top: calculateRem(10px);
+      @include isMobile() {
+        @include fontSize(20px);
+      }
+    }
+    &__image {
+      width: calculateRem(233px);
+      height: calculateRem(233px);
+      border-radius: calculateRem(12px);
+      margin-left: calculateRem(47px);
+      margin-right: calculateRem(36.42px);
+      @include isTablet() {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    &__details {
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__main {
+          display: flex;
+          align-items: center;
+          @include isTablet() {
+            width: 100%;
+            justify-content: space-between;
+            margin-top: calculateRem(18.32px);
+          }
+        }
+        &__icons {
+          margin-left: calculateRem(18px);
+          .ant-btn-primary:hover,
+          .ant-btn-primary:focus {
+            all: unset;
+          }
+
+          &__button {
+            &--edit {
+              all: unset;
+              svg {
+                width: calculateRem(26px);
+                height: calculateRem(34px);
+                @include isMobile() {
+                  width: calculateRem(20px);
+                }
+              }
+            }
+
+            &--delete {
+              all: unset;
+              svg {
+                width: calculateRem(22.5px);
+                height: calculateRem(34px);
+                @include isMobile() {
+                  width: calculateRem(20px);
+                }
+              }
+            }
+          }
+        }
+        &__price {
+          color: var(--secondary-color);
+          font-weight: 500;
+          @include fontSize(22px);
+          letter-spacing: 0.26px;
+          margin-right: calculateRem(50px);
+          @include isTablet() {
+            display: none;
+          }
+        }
+      }
+      &__info {
+        display: flex;
+        align-items: center;
+        margin-top: calculateRem(7px);
+        @include isTablet() {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        &__box {
+          margin-right: calculateRem(37px);
+          display: flex;
+          align-items: center;
+          @include isTablet() {
+            margin-bottom: calculateRem(12px);
+          }
+        }
+        &__icon {
+          &--location {
+            width: calculateRem(13px);
+            margin-right: calculateRem(12px);
+          }
+          &--date {
+            width: calculateRem(17px);
+            margin-right: calculateRem(12px);
+          }
+          &--seat {
+            width: calculateRem(17px);
+            margin-right: calculateRem(12px);
+          }
+        }
+        &__text {
+          color: var(--secondary-color);
+          @include fontSize(18px);
+          @include isMobile() {
+            @include fontSize(13px);
+          }
+        }
+      }
+      &__tickets {
+        display: flex;
+        flex-direction: column;
+        margin-top: calculateRem(28px);
+        @include isTablet() {
+          margin-top: calculateRem(18px);
+        }
+        &__type {
+          display: flex;
+          justify-content: space-between;
+          width: 42%;
+          margin-bottom: calculateRem(10px);
+          @include isTablet() {
+            width: 100%;
+          }
+
+          &__text {
+            color: var(--secondary-color);
+            @include fontSize(18px);
+            @include isMobile() {
+              @include fontSize(13px);
+            }
+          }
+          &__price {
+            font-weight: 500;
+            color: var(--secondary-color);
+            @include fontSize(18px);
+            @include isMobile() {
+              @include fontSize(13px);
+            }
+          }
+        }
+      }
+      &__total-price {
+        display: none;
+        @include isTablet() {
+          display: flex;
+          justify-content: space-between;
+          margin-top: calculateRem(10px);
+        }
+        &__text {
+          color: var(--secondary-color);
+          @include fontSize(18px);
+          @include isMobile() {
+            @include fontSize(13px);
+          }
+        }
+        &__price {
+          @include priceOfCartActions();
+          @include isMobile() {
+            @include fontSize(20px);
+          }
+        }
+      }
+    }
+    &__total-price {
+      display: flex;
+      justify-content: space-between;
+
+      &__text {
+        @include textOfCartActions();
+        @include isMobile() {
+          @include fontSize(20px);
+        }
+      }
+      &__price {
+        @include priceOfCartActions();
+        @include isMobile() {
+          @include fontSize(20px);
+        }
+      }
+    }
+  }
+  &__overview {
+    width: 100%;
+    padding-top: calculateRem(41px);
+    box-shadow: 0px 8px 16px #0000000f;
+    border-color: var(--input-border-color);
+    border-radius: calculateRem(18px);
+    @include isLandscapetablet() {
+      width: 100%;
+      border-radius: calculateRem(10px);
+      padding-top: calculateRem(21px);
+    }
+    .shopping-cart__overview__promo-code.ant-input-group.ant-input-group
+      .shopping-cart__overview__input {
+      @include isTablet() {
+        border-radius: calculateRem(10px);
+      }
+    }
+    .shopping-cart__overview__promo-code.ant-input-group.ant-input-group
+      .shopping-cart__overview__button {
+      @include isTablet() {
+        border-radius: calculateRem(10px);
+      }
+    }
+
+    .ant {
+      &-card {
+        &-head {
+          border-bottom: none;
+          padding: 0;
+
+          &-title {
+            padding-top: calculateRem(8px);
+            padding-left: calculateRem(45px);
+            @include isTablet() {
+              padding-left: calculateRem(20px);
+            }
+          }
+        }
+        &-body {
+          margin-top: -2rem;
+          padding-right: calculateRem(45px);
+          padding-left: calculateRem(46px);
+          @include isTablet() {
+            padding: calculateRem(20px);
+          }
+        }
+        &-actions {
+          height: calculateRem(104px);
+          min-height: calculateRem(104px);
+          padding: 0 calculateRem(46px);
+          margin-top: calculateRem(41px);
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom-left-radius: calculateRem(18px);
+          border-bottom-right-radius: calculateRem(18px);
+          border-top: none;
+          @include isTablet() {
+            height: calculateRem(72px);
+            min-height: calculateRem(72px);
+            padding-left: calculateRem(20px);
+            padding-right: calculateRem(20px);
+            border-bottom-left-radius: calculateRem(10px);
+            border-bottom-right-radius: calculateRem(10px);
+            @include isMobile() {
+              margin-top: calculateRem(10px);
+            }
+          }
+        }
+      }
+      &-typography {
+        color: var(--label-color);
+        font-weight: 500;
+        @include fontSize(22px);
+        letter-spacing: 0.26px;
+        margin: 0;
+        @include isMobile() {
+          @include fontSize(16px);
+        }
+      }
+    }
+
+    &__details {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: calculateRem(21px);
+      @include isMobile() {
+        margin-bottom: calculateRem(16px);
+      }
+
+      &__text,
+      &__price {
+        @include fontSize(22px);
+        letter-spacing: 0.26px;
+        @include isMobile() {
+          @include fontSize(15px);
+        }
+      }
+      &__price {
+        font-weight: 500;
+      }
+    }
+    &__line {
+      border: none;
+      height: 2px;
+      margin-bottom: calculateRem(28.5px);
+      background-color: var(--input-bg);
+      @include isMobile() {
+        margin-top: calculateRem(-18px);
+      }
+      &__second {
+        @include isMobile() {
+          margin-top: calculateRem(28.5px);
+        }
+      }
+    }
+    &__promo-code {
+      @include inputWrapperStyle();
+      display: flex;
+      margin-top: calculateRem(9px);
+      @include isTablet() {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &--incorrect {
+        color: red;
+        @include fontSize(22px);
+      }
+    }
+    &__input {
+      @include inputStyle();
+      border-radius: calculateRem(12px);
+      width: calculateRem(320px);
+
+      @include isTablet() {
+        border-radius: calculateRem(10px);
+        height: calculateRem(50px);
+        width: 100%;
+      }
+
+      &::placeholder {
+        margin-left: 0;
+        letter-spacing: 0.26px;
+      }
+      &__icon {
+        width: calculateRem(30px);
+        @include isMobile() {
+          width: calculateRem(26px);
+        }
+      }
+    }
+    &__button {
+      width: calculateRem(127px);
+      height: calculateRem(64px);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: calculateRem(12px);
+      border-bottom-right-radius: calculateRem(12px);
+      font-weight: 400;
+      padding: 0 4%;
+      @include fontSize(22px);
+
+      @include isTablet() {
+        height: calculateRem(50px);
+        width: 100%;
+        margin-top: calculateRem(17px);
+        border-radius: calculateRem(10px);
+      }
+      @include isMobile() {
+        @include fontSize(16px);
+      }
+    }
+    &__total-price {
+      display: flex;
+      justify-content: space-between;
+
+      &__text {
+        @include textOfCartActions();
+        @include isMobile() {
+          @include fontSize(20px);
+        }
+      }
+      &__price {
+        @include priceOfCartActions();
+        @include isMobile() {
+          @include fontSize(20px);
+        }
+      }
+    }
+  }
+  &__button {
+    width: 100%;
+    height: calculateRem(64px);
+    margin-top: calculateRem(42px);
+    box-shadow: 0px 4px 8px #0000001f;
+
+    @include isLandscapetablet() {
+      width: 100%;
+      border-radius: calculateRem(12px);
+    }
+
+    @include isTablet() {
+      height: calculateRem(50px);
+      box-shadow: 0px 4px 8px #0000001f;
+      border-radius: calculateRem(10px);
+    }
+    @include isMobile() {
+      display: none;
+    }
+  }
+}

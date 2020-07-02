@@ -1,0 +1,24 @@
+//this file holds all our breakpoints using mixins
+@mixin isMobile() {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin isTablet() {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin isLandscapetablet() {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin isLargeDesktop() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}

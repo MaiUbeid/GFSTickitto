@@ -1,0 +1,14 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.form-page {
+  overflow: hidden;
+  &__header {
+    height: calculateRem(238px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(140 + $mobile-menu-height);
+    }
+  }
+}

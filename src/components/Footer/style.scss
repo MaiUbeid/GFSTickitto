@@ -1,0 +1,279 @@
+@import '../../styles/partials/all';
+
+.footer {
+  &__section {
+    &-icon {
+      width: calculateRem(22px);
+      height: calculateRem(20px);
+      margin-top: -3px;
+
+      @include isTablet() {
+        width: calculateRem(13px);
+        height: calculateRem(19px);
+      }
+    }
+  }
+
+  &--large {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: calculateRem(160px);
+    padding: calculateRem(80px) calculateRem(130px) calculateRem(130px)
+      calculateRem(120px);
+
+    @include isTablet() {
+      flex-direction: column;
+      margin-top: calculateRem(60px);
+      padding: calculateRem(46px) calculateRem(15px);
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding-right: calculateRem(32px);
+    width: 20%;
+
+    @include isTablet() {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: calculateRem(32px);
+    }
+
+    &-category {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      @include isTablet() {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      font-family: var(--primary-font-family);
+      color: var(--footer-title-color);
+      font-weight: 500;
+      letter-spacing: 0.26px;
+      margin-left: 1rem;
+      @include fontSize(22px);
+
+      &:focus {
+        outline: none;
+      }
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+      }
+    }
+
+    &-options {
+      margin-left: calculateRem(30px);
+
+      .ant-btn-link {
+        color: var(--footer-btn-link-color);
+      }
+    }
+
+    &-option {
+      display: block;
+      color: var(--footer-text-color);
+      margin-top: calculateRem(19px);
+      @include fontSize(18px);
+
+      @include isTablet() {
+        @include fontSize(13px);
+      }
+    }
+
+    &-button {
+      @include fontSize(18px);
+      letter-spacing: 0.26px;
+      font-weight: 500;
+      margin-top: calculateRem(43px);
+      padding: 0;
+
+      @include isTablet() {
+        margin-top: 0;
+      }
+
+      svg {
+        height: calculateRem(13px);
+
+        @include isTablet() {
+          height: calculateRem(11px);
+        }
+      }
+    }
+
+    &-line {
+      content: '';
+      width: 1px;
+      background: var(--footer-border-color);
+      margin: 0 2rem 0 5rem;
+    }
+
+    .logo-section {
+      width: 70%;
+      margin: calculateRem(60px);
+      color: var(--footer-title-color);
+
+      @include isTablet() {
+        margin: 0;
+      }
+
+      &__powered {
+        font-family: var(--secondary-font-family);
+        @include fontSize(14px);
+        font-weight: 500;
+        letter-spacing: 0.2px;
+
+        @include isTablet() {
+          @include fontSize(11px);
+        }
+      }
+
+      &__logo {
+        width: calculateRem(140px);
+        height: calculateRem(32px);
+        margin-top: calculateRem(10px);
+        margin-bottom: calculateRem(57px);
+
+        @include isTablet() {
+          width: calculateRem(100px);
+          height: calculateRem(23px);
+          margin-top: calculateRem(8px);
+          margin-bottom: calculateRem(18px);
+        }
+      }
+
+      &__year {
+        @include fontSize(18px);
+
+        @include isTablet() {
+          @include fontSize(13px);
+        }
+      }
+    }
+  }
+
+  &--small {
+    padding: calculateRem(45px) 0;
+
+    @include isTablet() {
+      padding: calculateRem(42px) calculateRem(15px);
+      margin-top: calculateRem(60px);
+    }
+
+    .footer__section,
+    .footer__section-line {
+      display: none;
+    }
+
+    &__section {
+      display: flex;
+
+      @include isTablet() {
+        flex-direction: column;
+      }
+
+      .footer__section {
+        &-options {
+          display: flex;
+          justify-content: space-evenly;
+          width: 70%;
+          padding: calculateRem(50px) calculateRem(120px) calculateRem(50px) 0;
+          margin: auto 0;
+
+          @include isLandscapetablet() {
+            padding: calculateRem(46px);
+          }
+
+          @include isTablet() {
+            padding: 0;
+            margin: 0;
+            margin-bottom: calculateRem(50px);
+          }
+        }
+
+        &-option {
+          font-weight: 500;
+          letter-spacing: 0.24px;
+          @include fontSize(20px);
+
+          @include isTablet() {
+            font-weight: 400;
+            @include fontSize(13px);
+          }
+        }
+
+        &-line {
+          &--small {
+            content: '';
+            width: calculateRem(2px);
+            background: var(--footer-border-color);
+            margin-left: 6rem;
+          }
+        }
+      }
+    }
+
+    .logo-section {
+      width: 10%;
+      margin: auto calculateRem(48px);
+      color: var(--footer-title-color);
+      padding: calculateRem(60px) calculateRem(30px) calculateRem(60px)
+        calculateRem(30px);
+
+      @include isTablet() {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+      }
+
+      &__powered {
+        font-family: var(--secondary-font-family);
+        font-weight: 500;
+        margin-top: 2rem;
+        @include fontSize(14px);
+        letter-spacing: 0.2px;
+
+        @include isTablet() {
+          @include fontSize(11px);
+        }
+      }
+
+      &__logo {
+        width: calculateRem(140px);
+        height: calculateRem(32px);
+        margin-top: calculateRem(10px);
+        margin-bottom: calculateRem(57px);
+
+        @include isTablet() {
+          width: calculateRem(100px);
+          height: calculateRem(23px);
+          margin-top: calculateRem(8px);
+          margin-bottom: calculateRem(18px);
+        }
+      }
+
+      &__year {
+        @include isTablet() {
+          @include fontSize(13px);
+        }
+      }
+    }
+  }
+
+  .popup-settings__line {
+    height: 0;
+  }
+}
+
+@include isTablet() {
+  .column {
+    flex-direction: column;
+  }
+}

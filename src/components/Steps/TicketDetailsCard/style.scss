@@ -1,0 +1,260 @@
+@import '../../../styles/partials/all';
+
+.ticket-card {
+  border: calculateRem(1px) solid var(--card-border-color);
+  box-shadow: 0px 8px 16px var(--card-shadow-color);
+  margin-left: calculateRem(49px);
+  border-radius: calculateRem(18px);
+  width: 100%;
+
+  @include isTablet() {
+    margin-left: 0;
+    margin-top: 3rem;
+    border-radius: calculateRem(10px);
+  }
+
+  @include isLandscapetablet() {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+
+  .ant-card {
+    &-head {
+      padding-top: calculateRem(41px);
+      padding-left: calculateRem(45px);
+      border-bottom: none;
+
+      @include isTablet() {
+        margin: auto calculateRem(20px);
+      }
+      @include isMobile() {
+        padding-top: calculateRem(21px);
+        padding-left: calculateRem(19px);
+        margin: 0;
+      }
+
+      &-title {
+        @include fontSize(22px);
+        letter-spacing: 0.26px;
+        font-weight: 500;
+        padding-bottom: 0;
+
+        @include isTablet() {
+          @include fontSize(16px);
+          letter-spacing: 0.19px;
+        }
+      }
+    }
+
+    &-body {
+      padding: 0;
+    }
+
+    &-meta {
+      &-title {
+        font-weight: 500;
+        color: var(--label-color);
+        padding-bottom: calculateRem(13px);
+        @include fontSize(26px);
+        @include isMobile() {
+          @include fontSize(22px);
+          letter-spacing: 0.24px;
+        }
+      }
+
+      &-description {
+        color: var(--form-text-secondary-colo);
+        @include fontSize(18px);
+      }
+    }
+  }
+
+  &__meta {
+    &-attraction {
+      padding-left: calculateRem(45px);
+      padding-right: calculateRem(45px);
+      padding-top: calculateRem(30px);
+
+      @include isMobile() {
+        padding-left: calculateRem(19px);
+        padding-top: calculateRem(22.5px);
+        padding-bottom: calculateRem(16px);
+      }
+
+      .ant-card-meta-description {
+        border-bottom: none;
+        margin-bottom: calculateRem(5px);
+      }
+      &--flex {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        @include isLandscapetablet() {
+          display: block;
+        }
+      }
+      &__box {
+        display: flex;
+        align-items: center;
+        color: var(--form-text-secondary-color);
+        @include fontSize(18px);
+        @include isMobile() {
+          @include fontSize(13px);
+        }
+
+        svg {
+          margin-right: calculateRem(14px);
+        }
+      }
+    }
+
+    &-booking {
+      padding-top: calculateRem(28px);
+      padding-left: calculateRem(45px);
+      padding-right: calculateRem(45px);
+
+      @include isMobile() {
+        padding-left: calculateRem(19px);
+        padding-right: calculateRem(20px);
+        padding-top: calculateRem(22px);
+      }
+
+      .ant-card-meta-description {
+        font-weight: 450;
+        color: var(--label-color);
+        padding-bottom: 1rem;
+        @include fontSize(18px);
+      }
+    }
+  }
+  &__line {
+    border: none;
+    height: 1px;
+    margin-top: calculateRem(10px);
+    margin-left: calculateRem(45px);
+    margin-right: calculateRem(45px);
+    background-color: var(--input-border-color);
+    @include isMobile() {
+      margin-top: calculateRem(-9px);
+      margin-left: calculateRem(19px);
+      margin-right: calculateRem(19px);
+    }
+  }
+
+  &__seat {
+    padding-bottom: 1rem;
+  }
+
+  &__icon {
+    width: calculateRem(22px);
+    height: calculateRem(22px);
+    @include isMobile() {
+      width: calculateRem(16px);
+      height: calculateRem(16px);
+    }
+  }
+
+  &__location-icon {
+    width: calculateRem(18px);
+    height: calculateRem(25px);
+    @include isMobile() {
+      width: calculateRem(13px);
+      height: calculateRem(18px);
+    }
+  }
+
+  &__seat-icon {
+    width: calculateRem(23px);
+    height: calculateRem(21px);
+    @include isMobile() {
+      width: calculateRem(16px);
+      height: calculateRem(15px);
+    }
+  }
+
+  &__sub-title {
+    letter-spacing: 0.26px;
+    @include fontSize(22px);
+    font-weight: 400;
+    margin-bottom: calculateRem(20px);
+    @include isMobile() {
+      margin-bottom: calculateRem(15px);
+      letter-spacing: 0.18px;
+      @include fontSize(15px);
+    }
+  }
+
+  &__number {
+    text-align: right;
+    font-weight: 500;
+    letter-spacing: 0.26px;
+    @include fontSize(22px);
+    @include isMobile() {
+      letter-spacing: 0.18px;
+      @include fontSize(15px);
+    }
+  }
+
+  &__actions {
+    border: none;
+    padding-right: calculateRem(45px);
+    padding-left: calculateRem(45px);
+    padding-top: calculateRem(33px);
+    height: calculateRem(104px);
+    border-bottom-left-radius: calculateRem(18px);
+    border-bottom-right-radius: calculateRem(18px);
+    background-color: var(--card-actions-background);
+    @include isMobile() {
+      height: calculateRem(67px);
+      padding-top: calculateRem(19px);
+      padding-right: calculateRem(20px);
+      padding-left: calculateRem(20px);
+      border-bottom-left-radius: calculateRem(10px);
+      border-bottom-right-radius: calculateRem(10px);
+    }
+  }
+  &__first-step__actions {
+    height: calculateRem(219px);
+    @include isMobile() {
+      height: calculateRem(67px);
+      padding-top: calculateRem(19px);
+      padding-right: calculateRem(20px);
+      padding-left: calculateRem(20px);
+    }
+  }
+
+  &__price {
+    &-desc {
+      font-weight: 500;
+      text-align: left;
+      color: var(--label-color);
+      letter-spacing: 0.47px;
+      @include fontSize(26px);
+      @include isMobile() {
+        letter-spacing: 0.36px;
+        @include fontSize(20px);
+      }
+    }
+
+    &-value {
+      font-weight: 600;
+      color: var(--price-text-color);
+      text-align: right;
+      letter-spacing: -0.31px;
+      @include fontSize(26px);
+      @include isMobile() {
+        letter-spacing: -0.24px;
+        @include fontSize(20px);
+      }
+    }
+  }
+
+  &__button {
+    height: calculateRem(64px);
+    width: 100%;
+    margin-top: calculateRem(37px);
+    @include isMobile() {
+      display: none;
+    }
+  }
+}

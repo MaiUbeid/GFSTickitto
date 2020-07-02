@@ -1,0 +1,88 @@
+@import '../../styles/partials/all';
+
+$home-page-card-section-title-font-size: 36px;
+$home-page-link-font-size: 22px;
+$mobile-home-page-card-section-title-font-size: $home-page-card-section-title-font-size -
+  16px;
+$mobile-home-page-link-font-size: $home-page-link-font-size - 6px;
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.home-page {
+  &__header {
+    height: calculateRem(450px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(337px + $mobile-menu-height);
+    }
+  }
+  &__search-bar {
+    margin: calculateRem(-180px / 2) auto;
+  }
+
+  &__cards {
+    margin: 0 auto;
+    padding: calculateRem(80px) calculateRem(80px) 0 calculateRem(80px);
+
+    @include isTablet() {
+      padding: calculateRem(30px) calculateRem(15px) calculateRem(20px) calculateRem(15px);
+    }
+
+    &-section {
+      margin-top: calculateRem(118px);
+
+      &:last-child {
+        margin: calculateRem(50px) auto calculateRem(50px);
+      }
+
+      @include isTablet() {
+        margin-top: calculateRem(90px);
+        position: relative;
+      }
+    }
+
+    &-link {
+      @include isTablet() {
+        position: absolute;
+        bottom: -4rem;
+        right: calculateRem(10px);
+      }
+    }
+
+    &-button {
+      @include fontSize($home-page-link-font-size);
+      color: var(--btn-link-color);
+      letter-spacing: 0.26px;
+      margin-left: calculateRem(20px);
+
+      @include isTablet() {
+        margin-left: 0;
+        padding-left: 0;
+        @include fontSize($mobile-home-page-link-font-size);
+      }
+    }
+
+    &-title {
+      font-family: var(--primary-font-family);
+      color: var(--home-title-color);
+      @include fontSize($home-page-card-section-title-font-size);
+      font-weight: 500;
+      letter-spacing: 0.43px;
+
+      @include isTablet() {
+        @include fontSize($mobile-home-page-card-section-title-font-size);
+      }
+    }
+  }
+
+  &__card {
+    padding: calculateRem(17px) calculateRem(12px);
+
+    @include isTablet() {
+      padding: calculateRem(11px) calculateRem(5px);
+    }
+  }
+
+  &__titles {
+    padding: 0 1rem;
+  }
+}

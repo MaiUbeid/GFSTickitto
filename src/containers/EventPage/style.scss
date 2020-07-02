@@ -1,0 +1,521 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.event-page {
+  .ant-layout-header {
+    background-color: #fff;
+  }
+  &__header {
+    height: calculateRem(448px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(270 + $mobile-menu-height);
+    }
+  }
+
+  &__booking-header {
+    display: none;
+
+    &--visible {
+      position: fixed;
+      display: flex;
+      z-index: 9;
+      width: 100%;
+      top:  calculateRem(118px);
+      background-color: var(--section-bg-color);
+      padding: calculateRem(32px) calculateRem(150px) calculateRem(48px)
+        calculateRem(132px);
+      border-bottom: calculateRem(2px) solid var(--card-border-color);
+
+      @include isTablet() {
+        height: calculateRem(90px);
+        bottom: 0;
+        top: auto;
+        padding: calculateRem(20px) calculateRem(15px) calculateRem(90px);
+        background-color: var(--layout-header-color);
+        border-radius: calculateRem(16px) calculateRem(16px) 0 0;
+        border: calculateRem(2px) solid var(--card-border-color);
+      }
+    }
+
+    &__title > .ant-typography {
+      padding-top: calculateRem(16px);
+      margin-bottom: 0;
+    }
+
+    &__button {
+      height: calculateRem(64px);
+      margin-top: calculateRem(12px);
+      width: 100%;
+
+      @include isTablet() {
+        height: calculateRem(50px);
+      }
+    }
+
+    &__book {
+      display: inline-flex;
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: column;
+      height: calculateRem(64px);
+      margin-right: calculateRem(32px);
+
+      &-value {
+        font-family: var(--primary-font-family);
+        font-weight: 800;
+        letter-spacing: 0.94px;
+        color: var(--price-text-color);
+        @include fontSize(41px);
+      }
+    }
+  }
+
+  &__details {
+    padding: calculateRem(93px) calculateRem(132px) 0 calculateRem(132px);
+
+    @include isLandscapetablet() {
+      padding: calculateRem(30px) calculateRem(15px) 0 calculateRem(15px); // this padding make bud in popup but it's perfect for mobile
+    }
+
+    &-header {
+      padding-bottom: calculateRem(28px);
+
+      &__title > .ant-typography {
+        color: #000;
+        font-weight: 550;
+        letter-spacing: 0.79px;
+        @include fontSize(44px);
+
+        @include isTablet() {
+          @include fontSize(28px);
+          letter-spacing: 0.5px;
+        }
+      }
+
+      &__description {
+        font-family: var(--secondary-font-family);
+        color: var(--card-paragraph-color);
+        @include fontSize(22px);
+        letter-spacing: 0.18px;
+        font-weight: 500;
+
+        @include isTablet() {
+          @include fontSize(13px);
+          letter-spacing: 0;
+        }
+      }
+
+      &__location {
+        font-family: var(--secondary-font-family);
+        color: var(--card-paragraph-color);
+        @include fontSize(22px);
+        font-weight: 500;
+        letter-spacing: 0.18px;
+
+        @include isTablet() {
+          @include fontSize(16px);
+          letter-spacing: 0.13px;
+          width: 70%;
+        }
+
+        &-text {
+          font-family: var(--primary-font-family);
+          @include fontSize(22px);
+          letter-spacing: 0.26px;
+          font-weight: 500;
+
+          @include isTablet() {
+            @include fontSize(16px);
+            letter-spacing: 0.19px;
+          }
+        }
+
+        &-icon {
+          width: calculateRem(16px);
+          margin-right: calculateRem(10px);
+
+          @include isTablet() {
+            width: calculateRem(14px);
+          }
+        }
+      }
+
+      &__price {
+        display: none;
+      }
+
+      &__social {
+        text-align: right;
+
+        &-item {
+          display: inline;
+          list-style: none;
+          padding: 0 calculateRem(8px);
+          cursor: pointer;
+        }
+
+        &-icon {
+          width: calculateRem(30px);
+          height: calculateRem(30px);
+
+          @include isTablet() {
+            width: calculateRem(19px);
+            height: calculateRem(19px);
+          }
+        }
+      }
+    }
+  }
+
+  &__overview {
+    &-card {
+      width: 100%;
+      box-shadow: 0px 8px 16px var(--card-shadow-color);
+
+      .ant-card-meta-title {
+        font-weight: 500;
+        letter-spacing: 0.43px;
+        margin: auto 3rem;
+        padding: 2rem 0 1rem;
+        border-bottom: 0.1rem solid var(--input-border-color);
+        @include fontSize(36px);
+      }
+
+      .ant-card-actions > li {
+        text-align: left;
+      }
+
+      .ant-card-body {
+        padding: 0;
+      }
+    }
+
+    &__actions {
+      background-color: var(--card-actions-background);
+      padding: calculateRem(32px) calculateRem(46px);
+      border-radius: 0 0 calculateRem(16px) calculateRem(16px);
+
+      @include isTablet() {
+        padding: calculateRem(16px) calculateRem(20px);
+        border-radius: 0 0 calculateRem(8px) calculateRem(8px);
+      }
+    }
+
+    &-description {
+      margin: auto calculateRem(46px);
+      padding: calculateRem(40px) 0;
+
+      @include isTablet() {
+        margin: auto calculateRem(20px);
+        padding: calculateRem(24px) 10% calculateRem(16px) 0;
+      }
+
+      &-title > .ant-typography {
+        font-family: var(--secondary-font-family);
+        color: var(--card-title-text-color);
+        @include fontSize(22px);
+        letter-spacing: 0.18px;
+        padding-bottom: calculateRem(32px);
+        margin-bottom: 0;
+        font-weight: 600;
+
+        @include isTablet() {
+          @include fontSize(15px);
+          letter-spacing: 0.12px;
+          padding-bottom: calculateRem(11px);
+        }
+      }
+
+      &-data {
+        font-family: var(--primary-font-family);
+        color: var(--card-paragraph-color);
+        @include fontSize(18px);
+        font-weight: 400;
+
+        @include isTablet() {
+          @include fontSize(13px);
+        }
+      }
+    }
+
+    &-button {
+      font-family: var(--secondary-font-family);
+      color: var(--btn-default-color);
+      padding: 0;
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.13px;
+      }
+    }
+
+    &-icon {
+      width: calculateRem(16px);
+      height: calculateRem(16px);
+      margin-right: calculateRem(10px);
+
+      @include isTablet() {
+        width: calculateRem(12px);
+        height: calculateRem(12px);
+        margin-right: calculateRem(7px);
+      }
+    }
+
+    &-span {
+      padding-right: 0.5rem;
+      @include fontSize(22px);
+    }
+  }
+
+  &__lists {
+    margin: auto calculateRem(46px);
+    padding: calculateRem(40px) 10% calculateRem(20px) 0;
+    border-bottom: 0.1rem solid var(--card-border-color);
+
+    @include isTablet() {
+      margin: auto calculateRem(20px);
+      padding: calculateRem(24px) 10% calculateRem(20px) 0;
+    }
+
+    &-title > .ant-typography {
+      font-family: var(--secondary-font-family);
+      font-weight: 600;
+      color: var(--card-title-text-color);
+      letter-spacing: 0.18px;
+      padding-bottom: calculateRem(34px);
+      margin-bottom: 0;
+      @include fontSize(22px);
+
+      @include isTablet() {
+        @include fontSize(15px);
+        letter-spacing: 0.12px;
+        padding-bottom: calculateRem(16px);
+      }
+    }
+  }
+
+  &__venue {
+    padding: calculateRem(42px) calculateRem(40px) calculateRem(46px)
+      calculateRem(45px);
+
+    @include isTablet() {
+      padding: calculateRem(25px) calculateRem(20px) calculateRem(20px);
+    }
+
+    img {
+      border-radius: calculateRem(12px);
+      width: 100%;
+      height: 25rem;
+      object-fit: cover;
+    }
+
+    &-address {
+      font-family: var(--primary-font-family);
+      font-weight: 500;
+      letter-spacing: 0.26px;
+      margin: auto 0;
+      @include fontSize(22px);
+
+      @include isLandscapetablet() {
+        padding: calculateRem(10px) calculateRem(97px) calculateRem(36px)
+          calculateRem(20px);
+      }
+    }
+
+    &-button {
+      padding-left: 0;
+      color: var(--btn-link-color);
+      @include fontSize(22px);
+      letter-spacing: 0.26px;
+      font-weight: 500;
+
+      &:hover {
+        color: var(--btn-link-color);
+      }
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+      }
+    }
+  }
+
+  &__date-section {
+    height: 100%;
+  }
+
+  &__time {
+    margin-left: calculateRem(48px);
+    border-radius: calculateRem(18px);
+    box-shadow: 0 8px 16px var(--card-shadow-color);
+    border: calculateRem(2px) solid var(--card-border-color);
+    width: 100%;
+    min-width: 320px;
+
+    @include isLandscapetablet() {
+      margin-left: 0;
+      padding: 0;
+      border-radius: calculateRem(10px);
+    }
+
+    &-header {
+      background-color: var(--section-bg-color);
+      padding: calculateRem(34px) calculateRem(46px);
+      border-radius: calculateRem(18px);
+
+      @include isTablet() {
+        padding: calculateRem(20px) calculateRem(15px);
+        border-radius: calculateRem(10px);
+      }
+
+      &__price {
+        font-family: var(--primary-font-family);
+        color: var(--price-text-color);
+        @include fontSize(41px);
+        font-weight: 800;
+        letter-spacing: 0.94px;
+        margin-left: calculateRem(10px);
+
+        @include isTablet() {
+          @include fontSize(24px);
+          letter-spacing: 0.55px;
+        }
+
+        &-span {
+          color: var(--card-paragraph-color);
+          @include fontSize(18px);
+          font-weight: 550;
+          letter-spacing: 0.26px;
+
+          @include isTablet() {
+            @include fontSize(11px);
+            letter-spacing: -0.08px;
+          }
+        }
+      }
+    }
+
+    &-slot {
+      padding: calculateRem(46px);
+      background-color: var(--input-bg);
+      border-radius: calculateRem(18px);
+
+      @include isTablet() {
+        padding: calculateRem(24px) calculateRem(15px);
+        border-radius: calculateRem(10px);
+      }
+
+      &__text {
+        font-family: var(--primary-font-family);
+        color: var(--card-paragraph-color);
+        @include fontSize(18px);
+        font-weight: 500;
+        margin-bottom: 0;
+
+        @include isTablet() {
+          @include fontSize(13px);
+        }
+      }
+
+      &__icon {
+        width: calculateRem(22px);
+        height: calculateRem(22px);
+        margin: 0 calculateRem(13px) calculateRem(-4px) 0;
+
+        @include isTablet() {
+          width: calculateRem(14px);
+          height: calculateRem(14px);
+          margin: 0 calculateRem(8px) calculateRem(-2px) 0;
+        }
+      }
+
+      &__button {
+        height: calculateRem(64px);
+        width: 100%;
+        margin-top: calculateRem(18px);
+
+        @include isTablet() {
+          margin-top: calculateRem(9px);
+          height: calculateRem(50px);
+        }
+      }
+    }
+  }
+
+  &__booking {
+    margin: calculateRem(16px) auto;
+    text-align: -webkit-center;
+
+    @include isTablet() {
+      margin: auto;
+    }
+  }
+
+  &__button {
+    height: calculateRem(88px);
+    width: calculateRem(344px);
+
+    @include isTablet() {
+      height: calculateRem(64px);
+    }
+  }
+
+  &__popup {
+    > div {
+      @include isTablet() {
+        padding: 0;
+      }
+    }
+  }
+
+  &__text {
+    color: var(--card-paragraph-color);
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    padding-bottom: calculateRem(36px);
+    list-style: none;
+    display: flex;
+    @include fontSize(18px);
+    padding: calculateRem(46px) ;
+
+    @include isTablet() {
+      @include fontSize(13px);
+      padding: calculateRem(20px);
+    }
+  }
+
+  &__loader {
+    height: 100vh;
+  }
+
+  &__map {
+    width: 100%;
+    height: calculateRem(446px);
+  }
+}
+
+.result__calendar {
+  &-button {
+    font-family: var(--primary-font-family);
+    height: calculateRem(50px);
+    font-weight: 500;
+    width: 90%;
+    margin: calculateRem(30px) auto;
+  }
+}
+
+.isBrowser {
+  @include isTablet() {
+    display: none;
+  }
+}
+
+.isMobile {
+  @include isTablet() {
+    display: block;
+  }
+}

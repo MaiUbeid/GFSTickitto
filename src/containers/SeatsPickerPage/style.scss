@@ -1,0 +1,30 @@
+@import '../../styles/partials/all';
+
+.session-expired, .full-page-err{
+  @include flexCenter();
+  flex-direction: column;
+  padding-bottom: 10%;
+ 
+  svg {
+    height: calculateRem(62px);
+    width: calculateRem(62px);
+  }
+
+  h1{
+    @include fontSize(44px);
+    padding: calculateRem(20px) 0 0 0;
+    margin: 0;
+
+    @include isTablet(){
+      @include fontSize(38px);
+    }
+  }
+
+  span{
+    @include fontSize(26px);
+  }
+}
+
+.full-page-err{
+  padding-bottom: 50%;
+}

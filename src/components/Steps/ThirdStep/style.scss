@@ -1,0 +1,487 @@
+@import '../../../styles/partials/all';
+
+.payment__step {
+  background-color: var(--layout-body-background);
+  padding: calculateRem(80px) calculateRem(132px);
+
+  @include isLandscapetablet() {
+    padding: 3rem;
+  }
+
+  @include isMobile() {
+    padding: calculateRem(20px) calculateRem(15px);
+  }
+}
+
+.payment-card {
+  width: 100%;
+  font-family: var(--primary-font-family);
+  background-color: var(--card-secondary-bg-color);
+  border: calculateRem(2px) solid var(--card-border-color);
+  border-radius: calculateRem(18px);
+  padding: calculateRem(46px);
+  box-shadow: 0px 8px 16px var(--card-shadow-color);
+
+  @include isLandscapetablet() {
+    padding: calculateRem(32px);
+  }
+
+  @include isMobile() {
+    border-radius: calculateRem(10px);
+    padding: calculateRem(25px) calculateRem(20px);
+  }
+
+  &__title {
+    > .ant-typography {
+      font-weight: 500;
+      color: var(--label-color);
+      letter-spacing: 0.79px;
+      @include fontSize(44px);
+      padding-bottom: calculateRem(39px);
+      margin-bottom: 0;
+
+      @include isTablet() {
+        @include fontSize(28px);
+        letter-spacing: 0.5px;
+        padding-bottom: calculateRem(22px);
+      }
+    }
+  }
+
+  &__description {
+    font-family: var(--primary-font-family);
+    color: var(--form-text-secondary-color);
+    @include fontSize(18px);
+    padding-bottom: calculateRem(34px);
+    font-weight: 400;
+    letter-spacing: 0.18px;
+
+    @include isTablet() {
+      @include fontSize(13px);
+      padding-bottom: calculateRem(16px);
+      padding-right: calculateRem(16px);
+    }
+  }
+
+  &__timer {
+    font-family: var(--secondary-font-family);
+    color: var(--form-text-color);
+    margin-left: calculateRem(4px);
+    @include fontSize(22px);
+    font-weight: 600;
+    letter-spacing: 0.18px;
+
+    @include isTablet() {
+      @include fontSize(15px);
+      letter-spacing: 0.12px;
+      display: flex;
+      padding-left: calculateRem(25px);
+    }
+    @include isMobile() {
+      margin-left: 0;
+    }
+
+    &-description {
+      font-family: var(--secondary-font-family);
+      font-weight: 600;
+      padding-bottom: calculateRem(50px);
+      letter-spacing: 0.18px;
+      @include fontSize(22px);
+      display: flex;
+
+      &--flex {
+        @include isMobile() {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      @include isTablet() {
+        @include fontSize(15px);
+        padding-bottom: calculateRem(30px);
+      }
+      @include isMobile() {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-icon {
+      width: calculateRem(26px);
+      height: calculateRem(26px);
+      margin-right: calculateRem(14.88px);
+
+      @include isTablet() {
+        width: calculateRem(15px);
+        height: calculateRem(15px);
+        margin-right: calculateRem(8px);
+      }
+    }
+  }
+}
+
+.card-type {
+  &__title {
+    @include fontSize(36px);
+    letter-spacing: 0.43px;
+    color: var(--label-color);
+    border-bottom: calculateRem(2px) solid var(--input-border-color);
+    padding-bottom: calculateRem(16px);
+    margin-bottom: 0;
+
+    @include isTablet() {
+      padding-bottom: calculateRem(8px);
+      @include fontSize(16px);
+      letter-spacing: 0.19px;
+    }
+  }
+
+  &__ticket {
+    width: calculateRem(22px);
+    height: calculateRem(18px);
+    margin-right: calculateRem(18px);
+    margin-top: -2px;
+
+    @include isTablet() {
+      width: calculateRem(20px);
+      height: calculateRem(16px);
+      margin-right: calculateRem(16px);
+    }
+  }
+
+  &__buttons-list {
+    list-style: none;
+    padding-top: calculateRem(46px);
+
+    @include isTablet() {
+      padding-top: calculateRem(22px);
+    }
+
+    li {
+      padding-bottom: calculateRem(32px);
+
+      @include isTablet() {
+        padding-bottom: calculateRem(25px);
+      }
+    }
+  }
+
+  &__button {
+    @include fontSize(22px);
+    letter-spacing: 0.26px;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    height: calculateRem(64px);
+    width: calculateRem(299px);
+    font-weight: 500;
+
+    @include isTablet() {
+      @include fontSize(16px);
+      letter-spacing: 0.19px;
+      height: calculateRem(50px);
+      width: calculateRem(233px);
+    }
+  }
+
+  &__apple {
+    &-button {
+      background-color: #000000;
+      color: var(--btn-secondary-color);
+      width: calculateRem(299px);
+      height: calculateRem(64px);
+      @include fontSize(22px);
+      font-weight: 500;
+      border: #000000;
+      padding: 0;
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+        height: calculateRem(50px);
+        width: calculateRem(233px);
+      }
+
+      &:hover {
+        background-color: #000000;
+        color: var(--btn-secondary-color);
+        opacity: 0.7;
+      }
+    }
+
+    &-icon {
+      width: calculateRem(65px);
+      margin-left: 0.5rem;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__google {
+    &-button {
+      border: 0.05rem solid var(--input-border-color);
+      box-shadow: calculateRem(2px) 0.6rem 1rem rgba(0, 0, 0, 0.082);
+      height: calculateRem(64px);
+      width: calculateRem(299px);
+      color: var(--label-color);
+      @include fontSize(22px);
+      font-weight: 500;
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+        height: calculateRem(50px);
+        width: calculateRem(233px);
+      }
+    }
+
+    &-icon {
+      width: 3rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__paypal {
+    &-button {
+      border: none;
+      height: calculateRem(64px);
+      width: calculateRem(299px);
+      background-color: #ffc439;
+      color: var(--label-color);
+      @include fontSize(22px);
+      font-weight: 500;
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+        height: calculateRem(50px);
+        width: calculateRem(233px);
+      }
+    }
+
+    &-icon {
+      width: 4rem;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.credit-card {
+  &__header {
+    position: relative;
+    border-bottom: calculateRem(2px) solid var(--input-border-color);
+  }
+
+  &__back {
+    width: calculateRem(5px);
+    height: calculateRem(11px);
+    margin-right: calculateRem(12px);
+  }
+
+  &__title {
+    @include fontSize(36px);
+    color: var(--label-color);
+    letter-spacing: 0.43px;
+    color: var(--label-color);
+    border-bottom: calculateRem(2px) solid var(--input-border-color);
+    padding-bottom: calculateRem(16px);
+    margin-bottom: 0;
+
+    @include isTablet() {
+      padding-bottom: calculateRem(8px);
+      @include fontSize(16px);
+      letter-spacing: 0.19px;
+    }
+  }
+
+  &__button {
+    height: 3.7rem;
+    width: 15rem;
+
+    @include isTablet() {
+      width: 100%;
+      @include fontSize(16px);
+      letter-spacing: 0.19px;
+    }
+  }
+
+  &__span {
+    position: absolute;
+    bottom: 0.6rem;
+    right: 1%;
+    width: 17%;
+    font-weight: 500;
+    color: var(--form-text-secondary-color);
+    padding: 0 0.4rem;
+    @include fontSize(18px);
+
+    @include isTablet() {
+      bottom: 13.3rem;
+      right: calc(10% + 20px);
+    }
+  }
+
+  &__icon {
+    width: 2.5rem;
+    margin-right: 0.8rem;
+  }
+
+  &__form {
+    padding-top: 0.9rem;
+    @include inputWrapperStyle();
+  }
+
+  &__form {
+    &-item {
+      padding: 0.9rem 0;
+      margin: 0.3rem auto;
+
+      @include isTablet() {
+        padding: 0;
+      }
+    }
+
+    &-group {
+      padding: 0.9rem 0;
+      margin: 0.3rem auto;
+    }
+
+    .ant-form-item-label > label {
+      font-family: var(--primary-font-family);
+      @include fontSize(22px);
+      letter-spacing: 0.26px;
+      font-weight: 400;
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+      }
+    }
+  }
+
+  &__input-group {
+    display: inline-flex;
+    margin-bottom: 0;
+  }
+
+  &__date {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__expire-date {
+    width: 80%;
+    margin-right: 2rem;
+  }
+
+  .ant-form-vertical .ant-form-item-label,
+  .ant-col-24.ant-form-item-label,
+  .ant-col-xl-24.ant-form-item-label {
+    padding: 0.4rem 0;
+
+    @include isTablet() {
+      padding: 0;
+    }
+  }
+
+  .ant-input-affix-wrapper > input.ant-input {
+    background-color: var(--input-bg);
+    @include fontSize(18px);
+  }
+}
+
+.payment__step {
+  .credit-card__input {
+    @include inputStyle();
+    border-radius: calculateRem(12px);
+    svg {
+      width: calculateRem(51px);
+
+      @include isTablet() {
+        width: calculateRem(24px);
+      }
+    }
+  }
+
+  .ant-form-item-explain {
+    @include fontSize(18px);
+  }
+}
+
+.payment-card__common-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.processing-card {
+  width: 90%;
+  margin: calculateRem(100px) auto;
+  background-color: var(--card-secondary-bg-color);
+  border: calculateRem(2px) solid var(--card-border-color);
+  border-radius: calculateRem(18px);
+  box-shadow: 0px 8px 16px var(--card-shadow-color);
+  text-align: center;
+  padding: 15% 0;
+
+  @include isTablet() {
+    border-radius: calculateRem(10px);
+    height: calculateRem(144px);
+    margin: calculateRem(30px) auto;
+    padding: 11% 0;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &__content {
+    > .ant-typography {
+      padding-top: 3rem;
+      @include fontSize(36px);
+      letter-spacing: 0.43px;
+
+      @include isTablet() {
+        @include fontSize(16px);
+        letter-spacing: 0.19px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.ant-form-item-control-input-content {
+  .credit-card {
+    &__input {
+      width: 85%;
+      border-radius: calculateRem(12px);
+
+      @include isLandscapetablet() {
+        width: 100%;
+        height: calculateRem(50px);
+        border-radius: calculateRem(10px);
+      }
+
+      &::placeholder {
+        color: var(--form-text-secondary-color);
+        text-align: center;
+        opacity: 0.9;
+        font-weight: 500;
+        @include fontSize(18px);
+      }
+
+      &-cvv {
+        border: 0.1rem solid var(--input-border-color);
+        @include inputStyle();
+        border-radius: calculateRem(12px);
+        width: 35%;
+
+        @include isTablet() {
+          width: 100%;
+          height: calculateRem(50px);
+          border-radius: calculateRem(8px);
+        }
+      }
+    }
+  }
+}

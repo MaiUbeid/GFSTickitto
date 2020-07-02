@@ -1,0 +1,13 @@
+@import './_whitelabel.scss';
+
+$primary-color: red;
+$layout-header-background: $primary-color;
+$btn-default-color: $primary-color;
+$btn-default-ghost-color: $btn-default-color;
+$btn-default-ghost-border: $btn-default-color;
+$btn-default-border: $btn-default-color;
+$input-bg: #f8f5fa;
+$input-border-color: #ebe6ef;
+$pagination-item-bg-active: $primary-color;
+
+@import './_exports.scss';

@@ -1,0 +1,91 @@
+@import '../../../styles/partials/all';
+
+.details-card {
+  background: var(--card-secondary-bg-color);
+  border: calculateRem(2px) solid var(--card-border-color);
+  @include fontSize(22px);
+  letter-spacing: 0.26px;
+  opacity: 1;
+  padding: calculateRem(46px);
+  box-shadow: 0px 8px 16px var(--card-shadow-color);
+  border-radius: calculateRem(18px);
+  margin: calculateRem(49px) auto auto calculateRem(49px);
+  width: 100%;
+
+  @include isTablet() {
+    padding: calculateRem(25px) calculateRem(20px);
+    border-radius: calculateRem(10px);
+    margin-left: 0;
+  }
+
+  &__row {
+    margin-bottom: calculateRem(16px);
+
+    @include isTablet() {
+      margin-bottom: 0;
+    }
+  }
+
+  &__value {
+    font-weight: 500;
+    overflow-wrap: break-word;
+  }
+
+  &__value,
+  &__key {
+    @include fontSize(22px);
+    letter-spacing: 0.26px;
+
+    @include isTablet() {
+      @include fontSize(15px);
+      letter-spacing: 0.18px;
+    }
+  }
+
+  &__title {
+    color: var(--label-color);
+    font-weight: 500;
+    padding: calculateRem(31px) 0 calculateRem(16px);
+    border-bottom: calculateRem(2px) solid var(--card-border-color);
+    @include fontSize(22px);
+    letter-spacing: 0.26px;
+
+    @include isTablet() {
+      @include fontSize(16px);
+      letter-spacing: 0.19px;
+    }
+  }
+
+  &__icon {
+    width: calculateRem(28px);
+    height: calculateRem(22px);
+    margin-right: calculateRem(12px);
+    margin-bottom: -2px;
+
+    @include isTablet() {
+      width: calculateRem(18px);
+      height: calculateRem(14px);
+      margin-right: calculateRem(8px);
+    }
+  }
+
+  .ant-card-head {
+    min-height: calculateRem(32px);
+    padding: 0 0 calculateRem(16px);
+  }
+
+  .ant-card-body {
+    padding: calculateRem(28px) 0 0;
+  }
+}
+
+.visa__details {
+  padding: calculateRem(28px) 0 0 0;
+}
+
+.ant-card-head-wrapper > .ant-card-head-title {
+  color: var(--label-color);
+  font-weight: 500;
+  @include fontSize(22px);
+  padding: 0;
+}

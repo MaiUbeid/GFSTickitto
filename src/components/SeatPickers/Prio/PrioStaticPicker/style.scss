@@ -1,0 +1,44 @@
+@import '../../../../styles/partials/all';
+
+.prio-static-picker{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-background-secondary);
+  &__selections-panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    & > div{
+      padding: 0 26px;
+    }
+
+    .ticket-options-list{
+      .quantity-select-row{
+        &:first-child{
+          padding-top: 0;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  button{
+    @include widgetButton();
+    margin-right: 40px;
+    margin-top: calculateRem(40px);
+    margin-bottom: 20px;
+  }
+
+  &--isTablet{
+    button{
+      margin: 0 auto;
+    }
+  }
+
+}

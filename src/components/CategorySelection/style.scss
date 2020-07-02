@@ -1,0 +1,76 @@
+@import '../../styles/partials/all';
+
+.categories {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      padding-bottom: calculateRem(48px);
+      padding-right: calculateRem(130px);
+      margin-bottom: 0;
+      font-weight: 500;
+      color: var(--label-color);
+      letter-spacing: 0.47px;
+      @include fontSize(26px);
+
+      @include isTablet() {
+        @include fontSize(22px);
+        letter-spacing: 0.4px;
+        padding-bottom: calculateRem(20px);
+      }
+    }
+
+    &-icon {
+      width: calculateRem(20px);
+      height: calculateRem(32px);
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    margin-bottom: calculateRem(20px);
+
+    @include isTablet() {
+      padding-left: 0;
+    }
+
+    &-showAll {
+      &__button {
+        font-family: var(--secondary-font-family);
+        padding-left: calculateRem(48px);
+        @include fontSize(22px);
+        letter-spacing: 0.18px;
+
+        @include isTablet() {
+          @include fontSize(18px);
+          letter-spacing: 0.14px;
+          padding-left: 0;
+        }
+      }
+
+      &__icon {
+        width: calculateRem(24px);
+        height: calculateRem(24px);
+        padding-top: calculateRem(10px);
+        padding-right: calculateRem(10px);
+      }
+    }
+  }
+
+  &__button {
+    .ant-btn {
+      color: var(--btn-link-color);
+    }
+  }
+}
+
+@include isTablet() {
+  .categories {
+    &__header {
+      &-button {
+        display: none;
+      }
+    }
+  }
+}

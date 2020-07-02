@@ -1,0 +1,213 @@
+@import '../../../styles/partials/all';
+
+.personal-step {
+  padding-top: calculateRem(95px);
+  padding-left: calculateRem(132px);
+  padding-right: calculateRem(132px);
+  padding-bottom: calculateRem(162px);
+
+  @include isMobile() {
+    padding-top: calculateRem(21px);
+    padding-left: calculateRem(14px);
+    padding-right: calculateRem(14px);
+  }
+
+  &-form {
+    width: 100%;
+    padding-top: calculateRem(39px);
+    padding-left: calculateRem(51px);
+    padding-right: calculateRem(207px);
+    padding-bottom: calculateRem(48px);
+    background-color: var(--card-secondary-bg-color);
+    box-shadow: 0px 8px 16px var(--card-shadow-color);
+    border: calculateRem(2px) solid var(--card-border-color);
+    border-radius: calculateRem(18px);
+    @include inputWrapperStyle();
+    @include isMobile() {
+      padding-top: calculateRem(21px);
+      padding-left: calculateRem(22px);
+      padding-right: calculateRem(20px);
+      padding-bottom: calculateRem(48px);
+      border-radius: calculateRem(10px);
+    }
+    &__title {
+      .ant-typography {
+        font-weight: 500;
+        color: var(--label-color);
+        letter-spacing: 0.79px;
+        margin-bottom: calculateRem(39px);
+        @include fontSize(44px);
+
+        @include isMobile() {
+          letter-spacing: 0.5px;
+          margin-bottom: calculateRem(28px);
+          @include fontSize(28px);
+        }
+      }
+    }
+
+    &__input {
+      @include inputStyle();
+      border-radius: calculateRem(12px);
+      @include isMobile() {
+        height: calculateRem(50px);
+        border-radius: calculateRem(10px);
+      }
+      &:active,
+      &:hover {
+        border-color: var(--input-border-color);
+      }
+    }
+
+    &__item {
+      margin-bottom: 0;
+
+      &__last-name {
+        padding-left: calculateRem(25px);
+        @include isLandscapetablet() {
+          padding-left: 0;
+          padding-top: calculateRem(39px);
+        }
+
+        @include isMobile() {
+          padding-top: calculateRem(8px);
+        }
+      }
+
+      &__email-address,
+      &__phone-number {
+        padding-top: calculateRem(39px);
+
+        @include isMobile() {
+          padding-top: calculateRem(8px);
+        }
+      }
+    }
+
+    &__name {
+      display: flex;
+
+      @include isLandscapetablet() {
+        display: block;
+      }
+    }
+
+    &__info {
+      margin-bottom: 0;
+      .ant-form-item-control-input-content {
+        display: flex;
+        margin-top: calculateRem(28px);
+      }
+      &__text {
+        color: var(--form-text-secondary-color);
+        margin-left: calculateRem(13px);
+        @include fontSize(18px);
+        @include isMobile() {
+          @include fontSize(13px);
+        }
+      }
+
+      &__icon {
+        width: calculateRem(24px);
+        @include isMobile() {
+          width: calculateRem(17px);
+        }
+      }
+    }
+
+    &__button {
+      width: calculateRem(315px);
+      height: calculateRem(64px);
+      border-radius: calculateRem(12px);
+      font-weight: 500;
+      letter-spacing: 0.26px;
+      margin-top: calculateRem(71px);
+      @include fontSize(22px);
+
+      @include isMobile() {
+        display: none;
+      }
+    }
+    &__error-message {
+      border-color: #ff4d4f;
+
+      .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        border-color: #ff4d4f;
+      }
+
+      &__text {
+        color: #ff4d4f;
+        font-size: 14px;
+      }
+    }
+
+    &__dropdown {
+      .dropdown__select {
+        margin: 0;
+      }
+
+      .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+        background-color: var(--input-bg);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: none;
+      }
+      .ant-select-single.ant-select-show-arrow
+        .ant-select-selection-placeholder {
+        color: var(--secondary-color);
+        font-family: var(--secondary-font-family);
+        letter-spacing: 0.18px;
+        margin-right: calculateRem(-6px);
+        &:first-letter {
+          font-size: calculateRem(28px);
+        }
+      }
+      .ant-select-single
+        .ant-select-selector
+        .ant-select-selection-placeholder {
+        line-height: calculateRem(64px);
+        @include isTablet() {
+          line-height: calculateRem(50px);
+        }
+      }
+      .ant-select-arrow {
+        display: none;
+      }
+      .ant-select-focused,
+      .ant-select-show-search {
+        border-color: var(--input-border-color);
+        box-shadow: none;
+      }
+    }
+  }
+  .ant-input-group {
+    display: flex;
+    margin-bottom: calculateRem(6px);
+    @include isMobile() {
+      margin-bottom: calculateRem(4px);
+    }
+  }
+  .ant-form-item-label > label {
+    letter-spacing: 0.26px;
+    @include fontSize(22px);
+    @include isMobile() {
+      letter-spacing: 0.19px;
+      @include fontSize(18px);
+    }
+  }
+
+  .ant-form-item-label > label.ant-form-item-required::before {
+    display: none;
+  }
+  .ant-form-vertical .ant-form-item-label,
+  .ant-col-24.ant-form-item-label,
+  .ant-col-xl-24.ant-form-item-label {
+    padding: 0;
+  }
+}
+
+.personal-step-form__name .personal-step-form__input {
+  @include isLandscapetablet() {
+    width: 98%;
+  }
+}

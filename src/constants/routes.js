@@ -1,0 +1,12 @@
+export const HOME_PAGE = '/';
+export const SEARCH_RESULTS = '/search-results';
+export const LOCATION_RESULTS = '/location-results';
+export const CATEGORY_RESULTS = '/category-results';
+export const FORM_PAGE = '/form-page';
+export const EVENT_PAGE = '/events';
+export const STANDALONE_PICKER = '/standalone-seats-picker';
+export const LOCATIONS_PAGE = '/locations';
+export const CATEGORIES_PAGE = '/categories';
+export const FAQ_PAGE = '/faqs-page';
+export const SHOPPING_CART_PAGE = '/shopping-cart-page';
+export const EVENT_TICKET_PICK_PAGE = '/ticket-pick';

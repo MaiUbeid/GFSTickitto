@@ -1,0 +1,81 @@
+@import '../../styles/partials/all';
+
+.popup-carousel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  height: 100%;
+  width: 40vw;
+  height: 70%;
+  @include isTablet() {
+    width: 70vw;
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &__body {
+    cursor: pointer;
+  }
+
+  &__img {
+    position: absolute;
+    height: 67.5%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__thumbnails {
+    position: absolute;
+    height: 20%;
+    bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    img {
+      width: 31%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &--two {
+      img {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &--one {
+      display: none;
+    }
+  }
+
+  &__arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 30%;
+    width: 100%;
+  }
+}
+
+.prev-arrow,
+.next-arrow {
+  position: relative;
+  svg {
+    width: calculateRem(23px);
+    height: calculateRem(43px);
+  }
+  .button__icon {
+    padding: 0;
+  }
+}
+.prev-arrow {
+  right: calculateRem(80px);
+}
+.next-arrow {
+  left: calculateRem(80px);
+}

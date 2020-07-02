@@ -1,0 +1,133 @@
+@import '../partials/fontUtilities';
+
+$body-background: #f5f5f6;
+$body-background-secondary: #ffffff;
+$primary-color: #7a49a0;
+$secondary-color: #4f5157;
+$secondary-text-color: #ffffff;
+$label-color: #000000;
+$border-color-base: $primary-color;
+$primary-font-family: 'Heebo';
+$secondary-font-family: 'Montserrat';
+$inactive-color: #7c7c7c;
+
+$downlooad-border-color: #7A46A0;
+
+$border-raduis-base: 1.2rem;
+$input-border-radius-base: calcRemRatio(12px);
+
+$border-width-base: 0.06rem;
+
+$cross-icon-color: #7c7c7c;
+$error-messages: #fc6666;
+
+$layout-header-background: $primary-color;
+$layout-body-background: $body-background;
+$layout-header-color: $secondary-text-color;
+$layout-footer-background: #5b456c;
+
+$btn-default-color: $primary-color;
+$btn-default-ghost-color: $btn-default-color;
+$btn-default-ghost-border: $btn-default-color;
+$btn-default-border: $btn-default-color;
+$btn-secondary-color: $secondary-text-color;
+$btn-link-color: $secondary-color;
+$btn-border-raduis: $input-border-radius-base;
+$btn-link-font-weigth: 600;
+$btn-border-width: 0.25rem;
+
+$input-bg: #f8f5fa;
+$input-border-color: #ebe6ef;
+$input-text-color: $secondary-color;
+$input-border-width: $border-width-base;
+
+$shadow-color: rgba(0, 0, 0, 0.12);
+$shadow-color-hover: rgba(0, 0, 0, 0.4);
+$bar-shadow-color: #0000000a;
+
+$pagination-item-bg-active: $primary-color;
+$pagination-border-color: $primary-color;
+$pagination-text-color: $primary-color;
+$pagination-text-color-active: $secondary-text-color;
+$pagination-ellipsis-color: $secondary-color;
+$pagination-arrow-color: $secondary-color;
+$pagination-step-arrow-color: $label-color;
+$pagination-border-radius: 0.3rem;
+$pagination-border-width: 0.2rem;
+
+$dropdown-text-color: $secondary-color;
+$dropdown-border-color: $primary-color;
+$dropdown-arrow-color: $primary-color;
+$dropdown-arrow-dark-color: $label-color;
+$dropdown-arrow-secondary-color: $secondary-text-color;
+$dropdown-secondary-color: $secondary-text-color;
+$dropdown-border-radius: 0.7rem;
+
+$breadcrumb-last-item-color: $secondary-text-color;
+$breadcrumb-separator-color: $secondary-text-color;
+$breadcrumb-text-color: $secondary-text-color;
+
+$event-btn-bg-color: $body-background;
+
+$steps-bg-color: $secondary-text-color;
+$steps-text-color: $label-color;
+$steps-secondary-text-color: $secondary-text-color;
+$overlay-bg-color: $label-color;
+
+$card-actions-background: $input-bg;
+$card-title-text-color: $secondary-color;
+$card-large-title-text-color: $label-color;
+$card-paragraph-color: $secondary-color;
+$card-tag-text-color: $secondary-text-color;
+$card-tag-background-color: #3fb729;
+$card-location-text-color: #7c7c7c;
+$card-secondary-bg-color: $secondary-text-color;
+$card-border-color: $input-border-color;
+$card-shadow-color: #0000000f;
+$card-border-radius: $border-raduis-base;
+$card-border-width: $border-width-base;
+
+$price-text-color: $primary-color;
+
+$menu-item-active-bg: $secondary-text-color;
+$menu-highlight-color: none;
+$menu-bg-color: $secondary-text-color;
+
+$checkbox-border-hover-color: $primary-color;
+$checkbox-color: $input-bg;
+$checkbox-check-color: $primary-color;
+$checkbox-check-bg: $input-bg;
+$checkbox-border-radius: 0.3rem;
+$checkbox-border-width: 0.2rem;
+
+$radio-button-bg: transparent;
+$radio-button-checked-bg: transparent;
+
+$picker-primary-color: $primary-color;
+$picker-bg-color: $input-bg;
+$picker-text-color: $secondary-color;
+$picker-secondary-text-color: $secondary-text-color;
+$picker-border-color: #673e88;
+$picker-transparent-bg-color: transparent;
+$picker-separator-color: rgba(122, 73, 160, 0.34);
+
+$form-text-secondary-color: $secondary-color;
+$form-text-color: $primary-color;
+
+$footer-title-color: $secondary-text-color;
+$footer-text-color: $secondary-text-color;
+$footer-btn-link-color: $secondary-text-color;
+$footer-border-color: $secondary-text-color;
+$footer-select-bg-color: #FFFFFF0F; 
+
+$section-bg-color: $input-bg;
+
+$collapse-bg-color: $secondary-text-color;
+$collapse-arrow-color: $primary-color;
+
+$home-title-color: rgba(0, 0, 0, 0.85);
+$separate-line-color: $input-border-color;
+
+$secondary-icon-color: $secondary-text-color;
+
+@import './_exports.scss';

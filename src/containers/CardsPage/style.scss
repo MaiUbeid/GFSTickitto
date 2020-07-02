@@ -1,0 +1,45 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.cards-page {
+  &__header {
+    height: calculateRem(238px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(140 + $mobile-menu-height);
+    }
+    &-box {
+      position: absolute;
+      width: 100%;
+      top: 40%;
+      left: calculateRem(132px);
+    }
+  }
+
+  &__cards {
+    margin: calculateRem(90px) calculateRem(120px) 0 calculateRem(120px);
+
+    &-row {
+      margin-bottom: calculateRem(60px);
+    }
+
+    @include isLandscapetablet() {
+      margin: 1rem;
+    }
+  }
+
+  &__card {
+    padding: 1rem;
+    margin-bottom: 3rem;
+
+    @include isLandscapetablet() {
+      margin-bottom: 0;
+    }
+  }
+
+  &__pagination {
+    text-align: center;
+    display: inline;
+  }
+}

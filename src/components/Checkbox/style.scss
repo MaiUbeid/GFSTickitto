@@ -1,0 +1,46 @@
+@import '../../styles/partials/all';
+
+.checkbox {
+  &__label {
+    display: flex;
+  }
+
+  &__span {
+    border: calculateRem(3px) solid var(--border-color-base);
+    border-radius: calculateRem(6px);
+    width: calculateRem(30px);
+    height: calculateRem(30px);
+    cursor: pointer;
+
+    @include isTablet() {
+      width: calculateRem(24px);
+      height: calculateRem(24px);
+    }
+
+    &-inner {
+      width: calculateRem(16px);
+      margin-left: 3px;
+
+      @include isTablet() {
+        width: calculateRem(13px);
+        margin-left: 2px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &__value {
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    letter-spacing: 0.26px;
+    vertical-align: middle;
+    color: var(--label-color);
+    padding: 0 calculateRem(16px);
+    @include fontSize(22px);
+
+    @include isTablet() {
+      @include fontSize(18px);
+      letter-spacing: 0.22px;
+    }
+  }
+}

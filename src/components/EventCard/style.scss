@@ -1,0 +1,97 @@
+@import '../../styles/partials/all';
+
+.event {
+  &__card {
+    width: 100%;
+    border: calculateRem(2px) solid var(--card-border-color);
+    box-shadow: 0px 4px 8px var(--shadow-color);
+    background-color: var(--card-secondary-bg-color);
+    border-radius: calculateRem(18px);
+    margin-bottom: calculateRem(46px);
+
+    @include isTablet() {
+      border-radius: calculateRem(10px);
+      margin-bottom: calculateRem(44px);
+      border: calculateRem(1.5px) solid var(--card-border-color);
+    }
+
+    &-title h2 {
+      font-weight: 500;
+      letter-spacing: 0.43px;
+      margin: auto calculateRem(46px);
+      padding: calculateRem(36px) 0 calculateRem(14px);
+      border-bottom: calculateRem(2px) solid var(--input-border-color);
+      @include fontSize(36px);
+
+      @include isTablet() {
+        @include fontSize(20px);
+        letter-spacing: 0.24px;
+        margin: auto calculateRem(19px);
+        padding: calculateRem(18px) 0 calculateRem(16px) 0;
+      }
+    }
+
+    &-section {
+      display: flex;
+      @include isLandscapetablet() {
+        display: block;
+      }
+    }
+  }
+
+  &__lists {
+    margin: auto calculateRem(46px);
+    padding: calculateRem(40px) 10% calculateRem(10px) 0;
+
+    @include isTablet() {
+      margin: auto calculateRem(20px);
+      padding: calculateRem(24px) 10% calculateRem(16px) 0;
+    }
+
+    &-item {
+      color: var(--card-paragraph-color);
+      font-family: var(--primary-font-family);
+      font-weight: 400;
+      padding-bottom: calculateRem(36px);
+      list-style: none;
+      display: flex;
+      @include fontSize(18px);
+
+      @include isTablet() {
+        @include fontSize(13px);
+        padding-bottom: calculateRem(16px);
+      }
+    }
+
+    &-icon {
+      width: calculateRem(27px);
+      height: calculateRem(27px);
+      margin-right: calculateRem(24px);
+
+      @include isTablet() {
+        width: calculateRem(16px);
+        height: calculateRem(16px);
+        margin-right: calculateRem(13px);
+      }
+    }
+
+    &-included {
+      margin: calculateRem(76px) calculateRem(97px) calculateRem(68px)
+        calculateRem(46px);
+      padding: 0;
+      width: 70%;
+
+      @include isLandscapetablet() {
+        width: 100%;
+        margin: calculateRem(30px) calculateRem(47px) calculateRem(25px)
+          calculateRem(20px);
+        border-right: 0;
+        width: 90%;
+      }
+    }
+    
+    &-text {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import '../styles/partials/all';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11px;
+}
+
+body{
+  background-color: transparent;
+}
+
+//removes ugly focus outline when you focus on a texbox
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+//antd radio checkbox override
+.ant-radio-wrapper{
+  display: flex;
+  align-items: center;  
+  $checkboxSize: 20px;
+  .ant-radio{
+    height: $checkboxSize;
+    width: $checkboxSize;
+    @include flexCenter;
+    .ant-radio-inner{
+      position: relative;
+      margin-top: 1px;
+      border-width: 2px;
+      height: $checkboxSize;
+      width: $checkboxSize;
+      border-radius: 50%;
+      @include flexCenter;
+      &:after {
+        position: unset;
+        width: 8px;
+        height: 8px; 
+      }
+    }
+  }
+}

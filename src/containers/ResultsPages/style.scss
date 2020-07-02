@@ -1,0 +1,122 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.result-page {
+  &__header {
+    height: calculateRem(365px + $menu-height);
+    @include isMobile() {
+      height: calculateRem(297 + $mobile-menu-height);
+    }
+    .breadcrumb {
+      top: calculateRem(83.61px + $menu-height);
+      @include isMobile() {
+        top: calculateRem(67px + $mobile-menu-height);
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__filter {
+    width: 100%;
+    margin: calculateRem(25px) auto 0;
+    display: none;
+
+    &-options {
+      margin: calculateRem(10px) auto;
+      text-align: center;
+      margin: calculateRem(70px) auto calculateRem(24px) auto;
+      display: none;
+
+      @include isTablet() {
+        display: initial;
+      }
+
+      &__button {
+        font-family: var(--primary-font-family);
+        height: calculateRem(50px);
+        font-weight: 500;
+        width: 90%;
+        margin: auto;
+      }
+    }
+
+    &-button {
+      height: calculateRem(50px);
+      width: 80%;
+      margin: auto;
+      font-family: var(--primary-font-family);
+      font-weight: 500;
+      @include fontSize(16px);
+      letter-spacing: 0.19px;
+    }
+
+    &-clear {
+      font-family: var(--primary-font-family);
+      color: var(--cross-icon-color);
+      @include fontSize(18px);
+      letter-spacing: 0.22px;
+      font-weight: 500;
+      margin: calculateRem(18px) auto;
+      display: flex;
+      flex-direction: row-reverse;
+
+      &:hover {
+        color: var(--cross-icon-color);
+      }
+
+      &__icon {
+        width: calculateRem(25px);
+        height: calculateRem(25px);
+        margin-left: calculateRem(10px);
+      }
+    }
+  }
+
+  &__categories {
+    padding: calculateRem(95px) calculateRem(132px) 0 calculateRem(132px);
+    @include isTablet(){
+      padding: 0
+    }
+  }
+
+  &__separated-line {
+    border: none;
+    height: 2px;
+    background-color: var(--separate-line-color);
+    margin-top: calculateRem(54px);
+
+    @include isTablet() {
+      margin-top: calculateRem(20px);
+      margin-right: calculateRem(70px);
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__cards {
+    margin: 0 auto;
+    padding-top: 12%;
+
+    @include isTablet() {
+      padding-top: 1%;
+    }
+
+    &__card {
+      margin: calculateRem(34px) calculateRem(64px) calculateRem(34px)
+        calculateRem(64px);
+
+      @include isTablet() {
+        margin: calculateRem(17px) calculateRem(15px) calculateRem(25px)
+          calculateRem(15px);
+      }
+    }
+  }
+
+  &__pagination {
+    margin: calculateRem(90px) auto auto;
+  }
+}

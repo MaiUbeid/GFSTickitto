@@ -1,0 +1,15 @@
+<svg version="1.1" id="Icon_-_Add" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve" width="100%" height="100%">
+	<style type="text/css">
+		.st1{fill:#7A49A0;}
+	</style>
+	<g id="Group_7274" transform="translate(0.5 0.5)">
+		<g id="Group_7273">
+			<path id="Path_8665" class="st1" d="M10.5,0C4.7,0,0,4.7,0,10.5S4.7,21,10.5,21S21,16.3,21,10.5C21,4.7,16.3,0,10.5,0z M10.5,19.1
+			c-4.8,0-8.6-3.9-8.6-8.6c0-4.8,3.9-8.6,8.6-8.6c4.8,0,8.6,3.9,8.6,8.6c0,0,0,0,0,0C19.1,15.3,15.3,19.1,10.5,19.1z" />
+			<path class="st1" d="M15.1,9.6L15.1,9.6l-3.6,0H9.6H5.9C5.4,9.6,5,10,5,10.5c0,0.5,0.4,0.9,0.9,0.9h3.6l1.9,0h3.6
+			c0.5,0,0.9-0.4,0.9-0.9C16,10,15.6,9.6,15.1,9.6z" />
+			<path transform="rotate(90 10.5 10.5)" class="st1" d="M15.1,9.6L15.1,9.6l-3.6,0H9.6H5.9C5.4,9.6,5,10,5,10.5c0,0.5,0.4,0.9,0.9,0.9h3.6l1.9,0h3.6
+			c0.5,0,0.9-0.4,0.9-0.9C16,10,15.6,9.6,15.1,9.6z" />
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,31 @@
+.picker-calendar{
+  display:  flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  &__entry{
+    padding: 5px;
+  }
+
+  &__active-cell{
+    text-align: center;
+    background-color: #7A49A0;
+    border-radius: 2px;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  &__active-cell:hover{
+    opacity: 0.85;
+  }
+
+  //override ant calendar
+  .ant-picker-cell-disabled{
+    .ant-picker-cell-inner{
+      opacity: 1;
+    }
+  }
+}
+

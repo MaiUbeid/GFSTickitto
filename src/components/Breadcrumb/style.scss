@@ -1,0 +1,36 @@
+@import '../../styles/partials/all';
+
+$menu-height: 118px;
+$mobile-menu-height: 62px;
+
+.breadcrumb {
+  position: absolute;
+  top: calculateRem(53px + $menu-height);
+  font-weight: 500;
+  left: calculateRem(132px);
+  letter-spacing: -0.13px;
+  font-family: var(--secondary-font-family);
+  cursor: pointer;
+  @include fontSize(18px);
+
+  @include isMobile() {
+    top: calculateRem(28px + $mobile-menu-height);
+    left: calculateRem(14px);
+    @include fontSize(13px);
+  }
+
+  &__separator-icon {
+    width: calculateRem(6px);
+    color: var(--breadcrumb-separator-color);
+  }
+
+  &__home-icon {
+    padding-right: calculateRem(10px);
+    width: calculateRem(28px);
+  }
+
+  &-current {
+    font-weight: 600;
+    cursor: text;
+  }
+}

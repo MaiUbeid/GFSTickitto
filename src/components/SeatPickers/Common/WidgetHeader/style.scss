@@ -1,0 +1,38 @@
+@import '../../../../styles/partials/all';
+
+.widget-header{
+  background-color: var(--body-background);
+  height: calculateRem(151px);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include isTablet(){
+    height: calculateRem(85px);
+  }
+
+  &__back{
+    height: calculateRem(38px);
+    width: calculateRem(38px);
+    margin: 0 20px;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+
+    @include isTablet(){
+      height: calculateRem(30px);
+      width: calculateRem(30px);
+      margin: 0 15px;
+    }
+  }
+
+  h1{
+    @include fontSize(44px);
+    margin: 0;
+    @include isTablet(){
+      @include fontSize(38px);
+    }
+  }
+}

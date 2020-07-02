@@ -1,0 +1,11 @@
+@import '../../../../styles/partials/all';
+
+.prio-pickup-picker{
+  @include isTablet(){
+    padding: 0;
+  }
+  h2{
+    margin: 0;
+    padding: 0;
+  }
+}

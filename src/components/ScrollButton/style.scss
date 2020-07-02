@@ -1,0 +1,32 @@
+@import '../../styles/partials/all';
+
+.scroll {
+  &-button {
+    height: calculateRem(50px);
+    width: 90%;
+    border-radius: calculateRem(10px);
+    letter-spacing: 0.19px;
+    border-radius: calculateRem(10px);
+    @include fontSize(16px);
+
+    &__wrapper {
+      display: none;
+      @include isMobile() {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        background-color: var(--secondary-text-color);
+        box-shadow: 0px -1px 10px #0000001a;
+        border: 2px solid var(--input-border-color);
+        border-top-right-radius: calculateRem(18px);
+        border-top-left-radius: calculateRem(18px);
+        width: 100%;
+        height: calculateRem(90px);
+      }
+    }
+  }
+}
