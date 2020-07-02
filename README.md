@@ -1,1 +1,7 @@
 # tickitto
+tickitto api key
+REACT_APP_TIK_API_KEY=12345
+#ingresso encoded credentials, eg demo:demopass
+REACT_APP_INGRESSO_API_CRED=dGlja2l0dG8tbm9zYWxlOjl5WkQ5N3VNaFpxVEtQZzc2UG5t
+REACT_APP_SENTRY_DSN=https://76527e966da04675a405358c2111bfd1@o391992.ingest.sentry.io/5238839
+REACT_APP_MAP_API_KEY=AIzaSyAAh3GQmEmVgdOJdduNAX-APl8Q604Bo_8
